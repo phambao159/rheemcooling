@@ -1,0 +1,11 @@
+[
+    {
+        "location_id": "LOC_001",
+        "branch_name": "Main Branch - HCMC",
+        "address": "123 Nguyen Van Linh, District 7, Ho Chi Minh City",
+        "phone": "028-1234-5678",
+        "email": "support@coolair.vn",
+        "map_embed": "<iframe src='https://maps.google.com/...'></iframe>",
+        "is_active": true
+    }
+]

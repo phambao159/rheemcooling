@@ -1,0 +1,20 @@
+[
+    {
+        "ac_id": "Brand_AC001",
+        "name": "Panasonic Inverter 1HP CU/CS-XU9UKH-8",
+        "sale_quantity": 1000,
+        "type": "Split AC",
+        "power": "1.0 HP (9000 BTU)",
+        "size": "770 x 240 x 180 mm",
+        "weight": "9.5 kg",
+        "description": "Inverter air conditioner saves electricity, operates smoothly, and filters dust and bacteria.",
+        "brand": "Panasonic",
+        "warranty": "2 years on-site warranty",
+        "country": "Thailand",
+        "price": 8990000,
+        "old_price": 9990000,
+        "stock_quantity": 25,
+        "install_fee": 300000,
+        "color": "White"
+    }
+]

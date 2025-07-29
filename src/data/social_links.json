@@ -1,0 +1,20 @@
+[
+    {
+        "platform": "Facebook",
+        "url": "https://facebook.com/rheemcooling",
+        "icon": "fa-facebook",
+        "is_active": true
+    },
+    {
+        "platform": "Instagram",
+        "url": "https://instagram.com/rheemcooling",
+        "icon": "fa-instagram",
+        "is_active": true
+    },
+    {
+        "platform": "Zalo",
+        "url": "https://zalo.me/123456789",
+        "icon": "fa-comment-dots",
+        "is_active": true
+    }
+]
