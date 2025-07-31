@@ -1,20 +1,118 @@
 [
-    {
-        "ac_id": "Brand_AC001",
-        "name": "Panasonic Inverter 1HP CU/CS-XU9UKH-8",
-        "sale_quantity": 1000,
-        "type": "Split AC",
-        "power": "1.0 HP (9000 BTU)",
-        "size": "770 x 240 x 180 mm",
-        "weight": "9.5 kg",
-        "description": "Inverter air conditioner saves electricity, operates smoothly, and filters dust and bacteria.",
-        "brand": "Panasonic",
-        "warranty": "2 years on-site warranty",
-        "country": "Thailand",
-        "price": 8990000,
-        "old_price": 9990000,
-        "stock_quantity": 25,
-        "install_fee": 300000,
-        "color": "White"
-    }
+  {
+    "ac_id": "Brand_AC001",
+    "name": "Panasonic Inverter 1HP CU/CS-XU9UKH-8",
+    "sale_quantity": 1000,
+    "type": "Split AC",
+    "power": "1.0 HP (9000 BTU)",
+    "size": "770 x 240 x 180 mm",
+    "weight": "9.5 kg",
+    "description": "Inverter air conditioner saves electricity, operates smoothly, and filters dust and bacteria.",
+    "brand": "Panasonic",
+    "warranty": "2 years on-site warranty",
+    "country": "Thailand",
+    "price": 8990000,
+    "old_price": 9990000,
+    "stock_quantity": 25,
+    "install_fee": 300000,
+    "color": "White"
+  },
+
+  {
+    "id": 1,
+    "title": "MOST POPULAR SMART AIR CONDITIONER",
+    "price": 250,
+    "oldPrice": 350,
+    "isNew": true,
+    "type": "new",
+    "discount": 0,
+    "img": "https://via.placeholder.com/200x200?text=Phone"
+  },
+  {
+    "id": 2,
+    "title": "MOST POPULAR SMART AIR CONDITIONER",
+    "price": 250,
+    "oldPrice": 350,
+    "isNew": true,
+    "type": "new",
+    "discount": 0,
+    "img": "https://via.placeholder.com/200x200?text=TV"
+  },
+  {
+    "id": 3,
+    "title": "MOST POPULAR SMART AIR CONDITIONER",
+    "price": 250,
+    "oldPrice": 350,
+    "isNew": false,
+    "type": "featured",
+    "discount": 20,
+    "img": "https://via.placeholder.com/200x200?text=Clock"
+  },
+  {
+    "id": 4,
+    "title": "MOST POPULAR SMART AIR CONDITIONER",
+    "price": 250,
+    "oldPrice": 350,
+    "isNew": false,
+    "type": "featured",
+    "img": "https://via.placeholder.com/200x200?text=Webcam"
+  },
+  {
+    "id": 5,
+    "title": "MOST POPULAR SMART AIR CONDITIONER",
+    "price": 250,
+    "oldPrice": 350,
+    "isNew": false,
+    "type": "bestseller",
+    "discount": 35,
+    "img": "https://via.placeholder.com/200x200?text=Speaker"
+  },
+  {
+    "id": 6,
+    "title": "MOST POPULAR SMART AIR CONDITIONER",
+    "price": 250,
+    "oldPrice": 350,
+    "isNew": true,
+    "type": "bestseller",
+    "img": "https://via.placeholder.com/200x200?text=Iron"
+  },
+  {
+    "id": 7,
+    "title": "MOST POPULAR SMART AIR CONDITIONER",
+    "price": 300,
+    "oldPrice": 400,
+    "isNew": true,
+    "type": "new",
+    "discount": 25,
+    "img": "https://via.placeholder.com/200x200?text=Microwave"
+  },
+  {
+    "id": 8,
+    "title": "MOST POPULAR SMART AIR CONDITIONER",
+    "price": 220,
+    "oldPrice": 290,
+    "isNew": false,
+    "type": "featured",
+    "discount": 10,
+    "img": "https://via.placeholder.com/200x200?text=Toaster"
+  },
+  {
+    "id": 9,
+    "title": "MOST POPULAR SMART AIR CONDITIONER",
+    "price": 275,
+    "oldPrice": 360,
+    "isNew": true,
+    "type": "bestseller",
+    "img": "https://via.placeholder.com/200x200?text=Fan"
+  },
+  {
+    "id": 10,
+    "title": "MOST POPULAR SMART AIR CONDITIONER",
+    "price": 260,
+    "oldPrice": 340,
+    "isNew": false,
+    "type": "featured",
+    "discount": 15,
+    "img": "https://via.placeholder.com/200x200?text=Blender"
+  }
 ]
