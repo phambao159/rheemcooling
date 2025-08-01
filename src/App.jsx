@@ -5,11 +5,15 @@ import { Route, Routes } from "react-router-dom";
 import Contact from './pages/contact/Contact';
 import CustomerSupport from './pages/customersupport/CustomerSupport';
 import AboutUs from './pages/aboutus/AboutUs';
+import YourLocation from './components/YourLocation';
+import VisitorCount from './components/VisitorCount';
 
 function App() {
   return (
     <div className="App">
       <Header />
+      <VisitorCount />
+
       <div className="container mx-auto px-4">
         <Routes>
           <Route path="/" element={<h3>Home</h3>} ></Route>
@@ -22,7 +26,9 @@ function App() {
           <Route path="/cassetteAC" element={<div>Cassette AC</div>} ></Route>
         </Routes>
       </div>
+      <YourLocation />
       <Footer />
+
     </div>
   );
 }
