@@ -18,7 +18,7 @@ function Header() {
                 <header className="bg-white">
                     <nav className="relative mx-auto flex max-w-7xl items-center justify-between px-4 lg:px-8 py-3">
                         {/* Logo */}
-                        <Link to="/" className="block w-[250px] lg:w-[300px] h-[80px] lg:h-[100px] overflow-hidden">
+                        <Link to="/" className="block w-[250px] lg:w-[300px] h-[80px] lg:h-[50px] overflow-hidden">
                             <img src={logo} alt="Logo" className="w-full h-full object-cover object-center" />
                         </Link>
 

@@ -1,0 +1,10 @@
+/* CSS for Product Details Page */
+.thumbSwiper .swiper-slide-thumb-active img {
+    border-color: #DC143C !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #DC143C;
+    /* Màu đỏ tươi */
+}

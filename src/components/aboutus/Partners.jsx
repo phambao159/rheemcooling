@@ -39,7 +39,6 @@ function Partners() {
                 <Swiper
                     modules={[Navigation, Pagination]}
                     spaceBetween={20}
-                    loop={true}
                     navigation={{
                         prevEl: '#custom-prev',
                         nextEl: '#custom-next',

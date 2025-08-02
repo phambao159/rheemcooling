@@ -7,6 +7,7 @@ import CustomerSupport from './pages/customersupport/CustomerSupport';
 import AboutUs from './pages/aboutus/AboutUs';
 import YourLocation from './components/YourLocation';
 import VisitorCount from './components/VisitorCount';
+import ProductDetail from './pages/productdetail/ProductDetail';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/windowAC" element={<div>Window AC</div>} ></Route>
           <Route path="/splitAC" element={<div>Split AC</div>} ></Route>
           <Route path="/cassetteAC" element={<div>Cassette AC</div>} ></Route>
+          <Route path="/product/TCL" element={<ProductDetail />} ></Route>
         </Routes>
       </div>
       <YourLocation />
