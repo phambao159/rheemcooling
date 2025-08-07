@@ -10,6 +10,8 @@ import VisitorCount from './components/VisitorCount';
 import ProductDetail from './pages/productdetail/ProductDetail';
 import product from "../src/data/product.json";
 import review from "../src/data/review.json";
+import RecentView from './components/RecentView';
+import SavedProduct from './pages/savedproduct/SavedProduct';
 
 function App() {
   return (
@@ -19,7 +21,7 @@ function App() {
 
       <div className="container mx-auto px-4">
         <Routes>
-          <Route path="/" element={<h3>Home</h3>} ></Route>
+          <Route path="/" element={<RecentView />} ></Route>
           <Route path="/contact" element={<Contact />} ></Route>
           <Route path="/customersupport" element={<CustomerSupport />} ></Route>
           <Route path="/aboutus" element={<AboutUs />} ></Route>
@@ -27,6 +29,7 @@ function App() {
           <Route path="/windowAC" element={<div>Window AC</div>} ></Route>
           <Route path="/splitAC" element={<div>Split AC</div>} ></Route>
           <Route path="/cassetteAC" element={<div>Cassette AC</div>} ></Route>
+          <Route path="/savedproduct" element={<SavedProduct />} ></Route>
           <Route path="/product/:id" element={<ProductDetail product={product} review={review} />} ></Route>
         </Routes>
       </div>

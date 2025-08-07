@@ -1,46 +1,24 @@
-// Consider.jsx
-
+// components/RecentView.jsx
+import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
-import { StarIcon as StarSolid } from "@heroicons/react/20/solid";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { Link } from 'react-router-dom';
-import React, { useState, useEffect } from 'react';
 
-
-function Consider({ data, review }) {
-    const [savedIds, setSavedIds] = useState([]);
-
+function RecentView() {
+    const [recent, setRecent] = useState([]);
 
     useEffect(() => {
-        const saved = JSON.parse(localStorage.getItem("saved_product")) || [];
-        setSavedIds(saved.map(item => item.ac_id));
+        const stored = JSON.parse(localStorage.getItem("recently_viewed")) || [];
+        setRecent(stored);
     }, []);
 
-
-    const handleSave = (product) => {
-        const saved = JSON.parse(localStorage.getItem("saved_product")) || [];
-        const existed = saved.find(s => s.ac_id === product.ac_id);
-
-        let updated;
-        if (existed) {
-            updated = saved.filter(s => s.ac_id !== product.ac_id);
-            alert("Removed from Saved successfully!");
-        } else {
-            updated = [...saved, product];
-            alert("Saved successfully!");
-        }
-
-        localStorage.setItem("saved_product", JSON.stringify(updated));
-        setSavedIds(updated.map(item => item.ac_id));
-    };
+    if (recent.length === 0) return null;
 
     return (
-        <div className="partners px-4 md:px-0">
-            <h2 className="text-2xl font-bold text-gray-800 mb-3">More to consider</h2>
-
+        <div className="px-4 md:px-0 my-10">
+            <h2 className="text-2xl font-bold mb-4">Recently Viewed</h2>
             <div className="relative w-full px-6 py-10">
 
                 {/* Custom Navigation Buttons */}
@@ -86,15 +64,7 @@ function Consider({ data, review }) {
                     }}
                     className="mySwiper"
                 >
-                    {data.map((product) => {
-                        const isSaved = savedIds.includes(product.ac_id);
-                        const productReviews = review.filter(r => r.product_id === product.ac_id);
-                        const totalReviews = productReviews.length;
-                        const avgRating = totalReviews
-                            ? (productReviews.reduce((sum, r) => sum + r.rating, 0) / totalReviews).toFixed(1)
-                            : 0;
-
-
+                    {recent.map((product) => {
                         return (
                             <SwiperSlide key={product.ac_id} className="p-6 border border-gray-200 rounded-md hover:shadow-sm">
                                 <img
@@ -103,30 +73,21 @@ function Consider({ data, review }) {
                                     alt={product.name}
                                     className="w-full h-50 md:h-30 md:object-cover mb-3 md:mb-0 object-contain"
                                 />
-                                <Link
-                                    to={`/product/${product.ac_id}`}
-                                    className="font-bold text-sm line-clamp-3 hover:underline"
-                                >
-                                    {product.name}
-                                </Link>
-
-                                <div className="flex items-center gap-1 mt-1 mb-3">
-                                    <StarSolid className="w-4 h-4 text-yellow-500" />
-                                    <span className="text-sm text-gray-500">{avgRating}</span>
-                                    <span className="text-sm text-gray-500">| Sold {product.sale_quantity}</span>
-                                </div>
+                                <h2 className="font-bold text-sm" style={{
+                                    display: '-webkit-box',
+                                    WebkitLineClamp: 3,
+                                    WebkitBoxOrient: 'vertical',
+                                    overflow: 'hidden'
+                                }}>{product.name}</h2>
 
                                 <div className="flex gap-2 items-center mb-3">
-                                    <p className="font-bold">${product.price}</p>
+                                    <p className="font-bold text-[#DC143C]">${product.price}</p>
                                     <p className="text-sm text-gray-500 line-through">${product.old_price}</p>
                                 </div>
+                                <button className="w-full bg-[#DC143C] hover:bg-red-700 transition font-bold py-2 rounded-lg text-white flex items-center justify-center mt-8 hover:cursor-pointer ">
+                                    Add to Save
+                                </button>
 
-
-                                {isSaved ? <button className="w-full bg-gray-50  hover:bg-[#DC143C] hover:text-white transition font-bold py-2 rounded-lg text-[#DC143C] border-2 border-[#DC143C] flex items-center justify-center mt-8 hover:cursor-pointer " onClick={() => handleSave(product)}>
-                                    Remove Saved
-                                </button> : <button className="w-full bg-[#DC143C] hover:bg-red-700 transition font-bold py-2 rounded-lg text-white flex items-center justify-center mt-8 hover:cursor-pointer " onClick={() => handleSave(product)}>
-                                    Save Product
-                                </button>}
                             </SwiperSlide>
                         );
                     })}
@@ -138,4 +99,4 @@ function Consider({ data, review }) {
     );
 }
 
-export default Consider;
+export default RecentView;

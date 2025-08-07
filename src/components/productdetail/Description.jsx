@@ -6,9 +6,33 @@ import { BoltIcon, ClockIcon, TruckIcon } from "@heroicons/react/24/outline";
 
 
 function Description({ data, review }) {
+    const [isSaved, setIsSaved] = useState(false);
+
 
     const totalReviews = review.length;
     const averageRating = (review.reduce((sum, r) => sum + r.rating, 0) / totalReviews).toFixed(1);
+    useEffect(() => {
+        const saved = JSON.parse(localStorage.getItem("saved_product")) || [];
+        const existed = saved.find(s => s.ac_id === data.ac_id);
+        setIsSaved(!!existed);
+    }, [data]);
+
+    const handleSave = () => {
+        const saved = JSON.parse(localStorage.getItem("saved_product")) || [];
+        const existed = saved.find(s => s.ac_id === data.ac_id);
+
+        if (existed) {
+            const updated = saved.filter(s => s.ac_id !== data.ac_id);
+            localStorage.setItem("saved_product", JSON.stringify(updated));
+            setIsSaved(false);
+            alert("Removed from Saved successfully!");
+        } else {
+            const updated = [...saved, data];
+            localStorage.setItem("saved_product", JSON.stringify(updated));
+            setIsSaved(true);
+            alert("Saved successfully!");
+        }
+    };
 
     function useUserLocation() {
         const [location, setLocation] = useState("Loading...");
@@ -89,11 +113,13 @@ function Description({ data, review }) {
                     ))}
 
                 </div>
-
-                <button className="w-2/3 md:w-full lg:w-1/2 bg-[#DC143C] hover:bg-red-700 transition font-bold px-8 py-3 rounded-lg text-white flex items-center justify-center mb-4 hover:cursor-pointer">
+                {isSaved ? <button className="w-2/3 md:w-full lg:w-1/2 bg-gray-50  hover:bg-[#DC143C] hover:text-white transition font-bold px-8 py-3 rounded-lg text-[#DC143C] border-2 border-[#DC143C] flex items-center justify-center mb-4 hover:cursor-pointer" onClick={handleSave}>
+                    Remove Saved
+                </button> : <button className="w-2/3 md:w-full lg:w-1/2 bg-[#DC143C] hover:bg-red-700 transition font-bold px-8 py-3 rounded-lg text-white flex items-center justify-center mb-4 hover:cursor-pointer" onClick={handleSave}>
                     <HeartIcon className="mx-1 w-5 h-5 text-white " />
-                    Add to Save
-                </button>
+                    Save Product
+                </button>}
+
                 <p className="text-sm text-gray-600">
                     Items are covered under <a href="#" className="text-[#DC143C] font-semibold underline">Rheem Cooling Promise</a>
                 </p>

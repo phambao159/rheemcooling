@@ -39,7 +39,7 @@ function Header() {
                         </div>
 
                         {/* Desktop Menu */}
-                        <div className="hidden lg:flex gap-x-10">
+                        <div className="hidden lg:flex items-center gap-x-10">
                             <div className="relative group">
                                 <button className="flex items-center gap-x-1 text-sm font-semibold text-gray-900">
                                     Product
@@ -72,6 +72,7 @@ function Header() {
                             <Link to="/aboutus" className="text-sm font-semibold text-gray-900">About Us</Link>
                             <Link to="/contact" className="text-sm font-semibold text-gray-900">Contact</Link>
                             <Link to="/customersupport" className="text-sm font-semibold text-gray-900">Customer Support</Link>
+                            <Link to="/savedproduct" className="text-sm font-semibold text-white bg-[#DC143C] rounded-sm px-3 py-2">Saved Product</Link>
                         </div>
                     </nav>
 
@@ -90,6 +91,7 @@ function Header() {
                             <Link to="/aboutus" className="block text-sm font-medium text-gray-700">About Us</Link>
                             <Link to="/contact" className="block text-sm font-medium text-gray-700">Contact</Link>
                             <Link to="/customersupport" className="block text-sm font-medium text-gray-700">Customer Support</Link>
+                            <Link to="/savedproduct" className="text-sm font-semibold text-white bg-[#DC143C] rounded-sm px-3 py-2">Saved Product</Link>
                         </div>
                     )}
                 </header>
@@ -99,13 +101,11 @@ function Header() {
             <div className="hidden lg:block h-12 bg-[#DC143C]">
                 <div className="flex container mx-auto h-full items-center ps-30">
                     <ul className="flex space-x-4 justify-between">
-                        <li><a href="#" className="text-sm text-white hover:underline font-semibold">air conditioner</a></li>
-                        <li><a href="#" className="text-sm text-white hover:underline font-semibold">AC unit</a></li>
-                        <li><a href="#" className="text-sm text-white hover:underline font-semibold">buy air conditioner</a></li>
+                        <li><a href="#" className="text-sm text-white hover:underline font-semibold">hot deals</a></li>
                         <li><a href="#" className="text-sm text-white hover:underline font-semibold">window AC</a></li>
                         <li><a href="#" className="text-sm text-white hover:underline font-semibold">portable air conditioner</a></li>
                         <li><a href="#" className="text-sm text-white hover:underline font-semibold">cheap air conditioner</a></li>
-                        <li><a href="#" className="text-sm text-white hover:underline font-semibold">smart AC</a></li>
+                        <li><a href="#" className="text-sm text-white hover:underline font-semibold">hot selling</a></li>
                     </ul>
                 </div>
             </div>
