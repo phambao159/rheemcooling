@@ -4,7 +4,7 @@ function SocialMedia() {
     return (
         <div className="socialmedia py-10">
             <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6 items-center">
-                <div className="col-span-2">
+                <div className="col-span-3 lg:col-span-2">
                     <h2 className="text-3xl font-bold text-gray-800 mb-4">Connect with us</h2>
                     <p className="text-gray-600 mt-2 mb-5">
                         Follow us for the latest promotions, product tips, and customer support. We’re always here to help!

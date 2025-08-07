@@ -16,7 +16,7 @@ function Mission() {
                     </ul>
                     <p className="text-gray-600 italic">We're not just cooling your spaces—we’re improving your lifestyle.</p>
                 </div>
-                <div className="col-span-2 px-30">
+                <div className="col-span-2 px-0 md:px-5 lg:px-30">
                     <div className="mb-5">
                         <h2 className="text-3xl font-bold text-[#DC143C] mb-2" style={{ fontFamily: "Inter" }}>30%  </h2>
                         <p className="text-sm">Energy Reduction by 2030</p>

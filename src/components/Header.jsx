@@ -1,40 +1,55 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { Menu, X } from "lucide-react";
 import logo from "../images/header/logo.png";
 import headbanner from "../images/header/headbanner.jpg";
-import { Link } from "react-router-dom";
 
 function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div className="header border-y border-gray-200 shadow-sm">
       <div>
         <img src={headbanner} alt="Banner Logo" />
       </div>
+
       <div className="container mx-auto">
         <header className="bg-white">
-          <nav className="relative mx-auto flex max-w-7xl items-center justify-between px-4  lg:px-8 grid grid-cols-8 gap-10">
-            {/* Logo bên trái */}
-            <div className="flex items-center gap-x-4 col-span-2">
-              <Link
-                to="/"
-                className="block w-[300px] h-[100px] overflow-hidden"
-              >
-                <img
-                  src={logo}
-                  alt="Logo"
-                  className="w-full h-full object-cover object-center"
-                />
-              </Link>
+          <nav className="relative mx-auto flex max-w-7xl items-center justify-between px-4 lg:px-8 py-3">
+            {/* Logo */}
+            <Link
+              to="/"
+              className="block w-[250px] lg:w-[300px] h-[80px] lg:h-[50px] overflow-hidden"
+            >
+              <img
+                src={logo}
+                alt="Logo"
+                className="w-full h-full object-cover object-center"
+              />
+            </Link>
 
-              {/* Thanh tìm kiếm bên phải logo */}
+            {/* Mobile Toggle */}
+            <div className="lg:hidden">
+              <button onClick={() => setIsOpen(!isOpen)}>
+                {isOpen ? (
+                  <X className="w-6 h-6" />
+                ) : (
+                  <Menu className="w-6 h-6" />
+                )}
+              </button>
             </div>
-            <div className="hidden col-span-2 lg:block ">
+
+            {/* Search (ẩn trên sm) */}
+            <div className="hidden lg:block w-[200px] ms-5">
               <input
                 type="text"
                 placeholder="Search..."
-                className="w-full px-4 py-2 text-sm border border-gray-300 rounded-xl  focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-2 text-sm border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
-            {/* Menu chính giữa */}
-            <div className="hidden col-span-4 lg:flex gap-x-10 ">
+
+            {/* Desktop Menu */}
+            <div className="hidden lg:flex gap-x-10">
               <div className="relative group">
                 <button className="flex items-center gap-x-1 text-sm font-semibold text-gray-900">
                   Product
@@ -46,7 +61,6 @@ function Header() {
                     <path d="M5.22 8.22a.75.75 0 011.06 0L10 11.94l3.72-3.72a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.22 9.28a.75.75 0 010-1.06z" />
                   </svg>
                 </button>
-
                 <div className="absolute left-0 top-full mt-2 w-72 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200 z-50">
                   <div className="p-4 space-y-4">
                     <Link to="/topsellingAC" className="block">
@@ -105,12 +119,66 @@ function Header() {
               </Link>
             </div>
           </nav>
+
+          {/* Mobile Menu Content */}
+          {isOpen && (
+            <div className="lg:hidden px-4 py-4 space-y-3 bg-gray-50 border-t">
+              <input
+                type="text"
+                placeholder="Search..."
+                className="w-full px-4 py-2 text-sm border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <Link
+                to="/topsellingAC"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Top Selling AC
+              </Link>
+              <Link
+                to="/windowAC"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Window AC
+              </Link>
+              <Link
+                to="/splitAC"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Split AC
+              </Link>
+              <Link
+                to="/cassetteAC"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Cassette AC
+              </Link>
+              <Link
+                to="/aboutus"
+                className="block text-sm font-medium text-gray-700"
+              >
+                About Us
+              </Link>
+              <Link
+                to="/contact"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Contact
+              </Link>
+              <Link
+                to="/customersupport"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Customer Support
+              </Link>
+            </div>
+          )}
         </header>
       </div>
-      {/* key-search */}
-      <div className="h-12 bg-[#DC143C]">
-        <div className="container mx-auto h-full flex items-center ps-30 ">
-          <ul className="flex space-x-4  justify-between	">
+
+      {/* Key search */}
+      <div className="hidden lg:block h-12 bg-[#DC143C]">
+        <div className="flex container mx-auto h-full items-center ps-30">
+          <ul className="flex space-x-4 justify-between">
             <li>
               <a
                 href="#"

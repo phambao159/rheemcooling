@@ -19,11 +19,6 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState("topselling");
   return (
     <div className="">
-      {/* Total Visitor */}
-      <div className="fixed top-0 right-0 bg-green-400 text-white px-4 py-1 z-50 rounded-bl-lg shadow">
-        Total Visitor
-      </div>
-
       {/* 1. Special Offer */}
       {isOpenSpecialOffer && (
         <div className="flex justify-center items-center bg-yellow-500 text-black text-2xl h-15 px-6 py-2 text-center relative animate-pulse">
@@ -328,11 +323,6 @@ export default function Home() {
           <a href="blank">View more products {">>"} </a>
         </div>
       </section>
-
-      {/* Date, time, location */}
-      <div className="bg-green-400 text-white text-sm text-center py-1 fixed bottom-0 right-0 w-[40%] z-50">
-        Ngày giờ & địa điểm hiện tại của client (fixed)
-      </div>
     </div>
   );
 }

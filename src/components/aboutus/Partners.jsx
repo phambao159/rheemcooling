@@ -39,8 +39,6 @@ function Partners() {
                 <Swiper
                     modules={[Navigation, Pagination]}
                     spaceBetween={20}
-                    slidesPerView={6}
-                    loop={true}
                     navigation={{
                         prevEl: '#custom-prev',
                         nextEl: '#custom-next',
@@ -48,7 +46,17 @@ function Partners() {
                     pagination={{
                         clickable: true,
                         el: '.custom-swiper-pagination',
-
+                    }}
+                    breakpoints={{
+                        0: {
+                            slidesPerView: 1, // sm: 2 slide
+                        },
+                        768: {
+                            slidesPerView: 3, // md: 3 slide
+                        },
+                        1024: {
+                            slidesPerView: 6, // lg: 6 slide
+                        },
                     }}
                     className="mySwiper"
                 >
@@ -57,11 +65,12 @@ function Partners() {
                             <img
                                 src={src}
                                 alt={`Slide ${index}`}
-                                className="w-full h-30 object-cover border border-gray-200 rounded-sm "
+                                className="w-full h-30 object-cover border border-gray-200 rounded-sm"
                             />
                         </SwiperSlide>
                     ))}
                 </Swiper>
+
                 <div className="custom-swiper-pagination flex justify-center mt-6"></div>
             </div>
         </div>
