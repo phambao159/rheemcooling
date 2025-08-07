@@ -8,6 +8,8 @@ import AboutUs from './pages/aboutus/AboutUs';
 import YourLocation from './components/YourLocation';
 import VisitorCount from './components/VisitorCount';
 import ProductDetail from './pages/productdetail/ProductDetail';
+import product from "../src/data/product.json";
+import review from "../src/data/review.json";
 
 function App() {
   return (
@@ -25,7 +27,7 @@ function App() {
           <Route path="/windowAC" element={<div>Window AC</div>} ></Route>
           <Route path="/splitAC" element={<div>Split AC</div>} ></Route>
           <Route path="/cassetteAC" element={<div>Cassette AC</div>} ></Route>
-          <Route path="/product/TCL" element={<ProductDetail />} ></Route>
+          <Route path="/product/:id" element={<ProductDetail product={product} review={review} />} ></Route>
         </Routes>
       </div>
       <YourLocation />
@@ -33,6 +35,7 @@ function App() {
 
     </div>
   );
+
 }
 
 export default App;

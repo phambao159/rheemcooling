@@ -2,10 +2,10 @@ import { useEffect, useRef, useState } from "react";
 
 function VisitorCount() {
     const [count, setCount] = useState(0);
-    const hasUpdated = useRef(false); // thêm cờ kiểm tra
+    const hasUpdated = useRef(false);
 
     useEffect(() => {
-        if (hasUpdated.current) return; // nếu đã tăng thì không tăng nữa
+        if (hasUpdated.current) return;
         hasUpdated.current = true;
 
         const savedCount = parseInt(localStorage.getItem("visitorCount") || "0");

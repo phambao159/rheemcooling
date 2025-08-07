@@ -1,0 +1,42 @@
+[
+    {
+        "id": "Samsung",
+        "url": "/images/partners/samsung.jpg"
+    },
+    {
+        "id": "Daikin",
+        "url": "/images/partners/daikin.jpg"
+    },
+    {
+        "id": "LG",
+        "url": "/images/partners/lg.jpg"
+    },
+    {
+        "id": "Panasonic",
+        "url": "/images/partners/panasonic.jpg"
+    },
+    {
+        "id": "Mitsubishi Electric",
+        "url": "/images/partners/mitsubishi.jpg"
+    },
+    {
+        "id": "Hitachi",
+        "url": "/images/partners/hitachi.jpg"
+    },
+    {
+        "id": "Carrier",
+        "url": "/images/partners/carrier.jpg"
+    },
+    {
+        "id": "Trane",
+        "url": "/images/partners/trane.jpg"
+    },
+    {
+        "id": "Toshiba",
+        "url": "/images/partners/toshiba.jpg"
+    },
+    {
+        "id": "Gree",
+        "url": "/images/partners/gree.jpg"
+    }
+]
