@@ -18,7 +18,7 @@ function Header() {
                 <header className="bg-white">
                     <nav className="relative mx-auto flex max-w-7xl items-center justify-between px-4 lg:px-8 py-3">
                         {/* Logo */}
-                        <Link to="/rheemcooling" className="block w-[250px] lg:w-[300px] h-[80px] lg:h-[50px] overflow-hidden">
+                        <Link to="/" className="block w-[250px] lg:w-[300px] h-[80px] lg:h-[50px] overflow-hidden">
                             <img src={logo} alt="Logo" className="w-full h-full object-cover object-center" />
                         </Link>
 
@@ -49,19 +49,19 @@ function Header() {
                                 </button>
                                 <div className="absolute left-0 top-full mt-2 w-72 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200 z-50">
                                     <div className="p-4 space-y-4">
-                                        <Link to="/rheemcooling/topsellingAC" className="block">
+                                        <Link to="/topsellingAC" className="block">
                                             <span className="text-sm text-gray-900 font-medium">Top Selling AC</span>
                                             <p className="text-xs text-gray-500">Best-sellers with highest ratings</p>
                                         </Link>
-                                        <Link to="/rheemcooling/windowAC" className="block">
+                                        <Link to="/windowAC" className="block">
                                             <span className="text-sm text-gray-900 font-medium">Window AC</span>
                                             <p className="text-xs text-gray-500">Compact cooling for small spaces</p>
                                         </Link>
-                                        <Link to="/rheemcooling/splitAC" className="block">
+                                        <Link to="/splitAC" className="block">
                                             <span className="text-sm text-gray-900 font-medium">Split AC</span>
                                             <p className="text-xs text-gray-500">Efficient cooling with quiet operation</p>
                                         </Link>
-                                        <Link to="/rheemcooling/cassetteAC" className="block">
+                                        <Link to="/cassetteAC" className="block">
                                             <span className="text-sm text-gray-900 font-medium">Cassette AC</span>
                                             <p className="text-xs text-gray-500">Ideal for large commercial areas</p>
                                         </Link>
@@ -69,10 +69,10 @@ function Header() {
                                 </div>
                             </div>
 
-                            <Link to="/rheemcooling/aboutus" className="text-sm font-semibold text-gray-900">About Us</Link>
-                            <Link to="/rheemcooling/contact" className="text-sm font-semibold text-gray-900">Contact</Link>
-                            <Link to="/rheemcooling/customersupport" className="text-sm font-semibold text-gray-900">Customer Support</Link>
-                            <Link to="/rheemcooling/savedproduct" className="text-sm font-semibold text-white bg-[#DC143C] rounded-sm px-3 py-2">Saved Product</Link>
+                            <Link to="/aboutus" className="text-sm font-semibold text-gray-900">About Us</Link>
+                            <Link to="/contact" className="text-sm font-semibold text-gray-900">Contact</Link>
+                            <Link to="/customersupport" className="text-sm font-semibold text-gray-900">Customer Support</Link>
+                            <Link to="/savedproduct" className="text-sm font-semibold text-white bg-[#DC143C] rounded-sm px-3 py-2">Saved Product</Link>
                         </div>
                     </nav>
 
@@ -84,14 +84,14 @@ function Header() {
                                 placeholder="Search..."
                                 className="w-full px-4 py-2 text-sm border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
                             />
-                            <Link to="/rheemcooling/topsellingAC" className="block text-sm font-medium text-gray-700">Top Selling AC</Link>
-                            <Link to="/rheemcooling/windowAC" className="block text-sm font-medium text-gray-700">Window AC</Link>
-                            <Link to="/rheemcooling/splitAC" className="block text-sm font-medium text-gray-700">Split AC</Link>
-                            <Link to="/rheemcooling/cassetteAC" className="block text-sm font-medium text-gray-700">Cassette AC</Link>
-                            <Link to="/rheemcooling/aboutus" className="block text-sm font-medium text-gray-700">About Us</Link>
-                            <Link to="/rheemcooling/contact" className="block text-sm font-medium text-gray-700">Contact</Link>
-                            <Link to="/rheemcooling/customersupport" className="block text-sm font-medium text-gray-700">Customer Support</Link>
-                            <Link to="/rheemcooling/savedproduct" className="text-sm font-semibold text-white bg-[#DC143C] rounded-sm px-3 py-2">Saved Product</Link>
+                            <Link to="/topsellingAC" className="block text-sm font-medium text-gray-700">Top Selling AC</Link>
+                            <Link to="/windowAC" className="block text-sm font-medium text-gray-700">Window AC</Link>
+                            <Link to="/splitAC" className="block text-sm font-medium text-gray-700">Split AC</Link>
+                            <Link to="/cassetteAC" className="block text-sm font-medium text-gray-700">Cassette AC</Link>
+                            <Link to="/aboutus" className="block text-sm font-medium text-gray-700">About Us</Link>
+                            <Link to="/contact" className="block text-sm font-medium text-gray-700">Contact</Link>
+                            <Link to="/customersupport" className="block text-sm font-medium text-gray-700">Customer Support</Link>
+                            <Link to="/savedproduct" className="text-sm font-semibold text-white bg-[#DC143C] rounded-sm px-3 py-2">Saved Product</Link>
                         </div>
                     )}
                 </header>

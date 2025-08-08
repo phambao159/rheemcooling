@@ -108,7 +108,7 @@ function RecentView() {
 
                                 {/* Product Name */}
                                 <Link
-                                    to={`/rheemcooling/product/${product.ac_id}`}
+                                    to={`/product/${product.ac_id}`}
                                     className="font-bold text-sm line-clamp-3 hover:underline"
                                 >
                                     {product.name}

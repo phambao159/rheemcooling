@@ -10,7 +10,7 @@ function Footer() {
                     <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-9 lg:grid-cols-8 gap-8 pb-10 border-b border-gray-300">
                         {/* Column 1: Logo + Description */}
                         <div className="flex flex-col items-center col-span-8 md:col-span-3 lg:col-span-2">
-                            <Link to="/rheemcooling" className="block w-[300px] h-[100px] overflow-hidden">
+                            <Link to="/" className="block w-[300px] h-[100px] overflow-hidden">
                                 <img src={logo} alt="Logo" className="w-full h-full object-cover object-center" />
                             </Link>
                             <p className="text-sm text-center">
@@ -24,25 +24,25 @@ function Footer() {
                             <div className="mb-3 col-span-4 md:col-span-4 lg:col-span-1">
                                 <h4 className="font-semibold text-gray-900 mb-3">About Us</h4>
                                 <ul className="space-y-2 text-sm">
-                                    <li><Link to="/rheemcooling/aboutus" className="hover:text-blue-600">Company Information</Link></li>
-                                    <li><Link href="/rheemcooling/aboutus" className="hover:text-blue-600">Vision - Mission - Core Values</Link></li>
-                                    <li><Link href="/rheemcooling/aboutus" className="hover:text-blue-600">Partners</Link></li>
+                                    <li><Link to="/aboutus" className="hover:text-blue-600">Company Information</Link></li>
+                                    <li><Link href="/aboutus" className="hover:text-blue-600">Vision - Mission - Core Values</Link></li>
+                                    <li><Link href="/aboutus" className="hover:text-blue-600">Partners</Link></li>
                                 </ul>
                             </div>
                             <div className="mb-3 col-span-4 md:col-span-4 lg:col-span-1">
                                 <h4 className="font-semibold text-gray-900 mb-3">Product</h4>
                                 <ul className="space-y-2 text-sm">
-                                    <li><Link to="/rheemcooling/topsellingAC" className="hover:text-blue-600">Selling AC</Link></li>
-                                    <li><Link to="/rheemcooling/windowAC" className="hover:text-blue-600">Window AC</Link></li>
-                                    <li><Link to="/rheemcooling/splitAC" className="hover:text-blue-600">Split AC</Link></li>
-                                    <li><Link to="/rheemcooling/cassetteAC" className="hover:text-blue-600">Cassette AC</Link></li>
+                                    <li><Link to="/topsellingAC" className="hover:text-blue-600">Selling AC</Link></li>
+                                    <li><Link to="/windowAC" className="hover:text-blue-600">Window AC</Link></li>
+                                    <li><Link to="/splitAC" className="hover:text-blue-600">Split AC</Link></li>
+                                    <li><Link to="/cassetteAC" className="hover:text-blue-600">Cassette AC</Link></li>
                                 </ul>
                             </div>
                             <div className="mb-3 col-span-4 md:col-span-4 lg:col-span-1">
                                 <h4 className="font-semibold text-gray-900 mb-3">Customer Support</h4>
                                 <ul className="space-y-2 text-sm">
-                                    <li><Link to="/rheemcooling/customersupport" className="hover:text-blue-600">FAQs</Link></li>
-                                    <li><Link to="/rheemcooling/customersupport" className="hover:text-blue-600">Sitemap</Link></li>
+                                    <li><Link to="/customersupport" className="hover:text-blue-600">FAQs</Link></li>
+                                    <li><Link to="/customersupport" className="hover:text-blue-600">Sitemap</Link></li>
                                 </ul>
                             </div>
 
