@@ -24,15 +24,16 @@ function App() {
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<RecentView />} ></Route>
-          <Route path="/contact" element={<Contact />} ></Route>
-          <Route path="/customersupport" element={<CustomerSupport />} ></Route>
-          <Route path="/aboutus" element={<AboutUs />} ></Route>
-          <Route path="/topsellingAC" element={<div>Top Selling AC</div>} ></Route>
-          <Route path="/windowAC" element={<div>Window AC</div>} ></Route>
-          <Route path="/splitAC" element={<div>Split AC</div>} ></Route>
-          <Route path="/cassetteAC" element={<div>Cassette AC</div>} ></Route>
-          <Route path="/savedproduct" element={<SavedProduct review={review} />} ></Route>
-          <Route path="/product/:id" element={<ProductDetail product={product} review={review} />} ></Route>
+          <Route path="/rheemcooling" element={<RecentView />} ></Route>
+          <Route path="/rheemcooling/contact" element={<Contact />} ></Route>
+          <Route path="/rheemcooling/customersupport" element={<CustomerSupport />} ></Route>
+          <Route path="/rheemcooling/aboutus" element={<AboutUs />} ></Route>
+          <Route path="/rheemcooling/topsellingAC" element={<div>Top Selling AC</div>} ></Route>
+          <Route path="/rheemcooling/windowAC" element={<div>Window AC</div>} ></Route>
+          <Route path="/rheemcooling/splitAC" element={<div>Split AC</div>} ></Route>
+          <Route path="/rheemcooling/cassetteAC" element={<div>Cassette AC</div>} ></Route>
+          <Route path="/rheemcooling/savedproduct" element={<SavedProduct review={review} />} ></Route>
+          <Route path="/rheemcooling/product/:id" element={<ProductDetail product={product} review={review} />} ></Route>
         </Routes>
 
       </div>
