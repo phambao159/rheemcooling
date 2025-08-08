@@ -117,7 +117,7 @@ function Consider({ data, review }) {
                                     className="w-full h-50 md:h-30 md:object-cover my-5 md:mb-0 object-contain"
                                 />
                                 <Link
-                                    to={`/product/${product.ac_id}`}
+                                    to={`/rheemcooling/product/${product.ac_id}`}
                                     className="font-bold text-sm line-clamp-3 hover:underline"
                                 >
                                     {product.name}

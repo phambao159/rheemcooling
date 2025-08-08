@@ -108,9 +108,8 @@ function RecentView() {
 
                                 {/* Product Name */}
                                 <Link
-                                    to={`/product/${product.ac_id}`}
+                                    to={`/rheemcooling/product/${product.ac_id}`}
                                     className="font-bold text-sm line-clamp-3 hover:underline"
-                                    onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                                 >
                                     {product.name}
                                 </Link>
@@ -124,8 +123,8 @@ function RecentView() {
                                 {/* Save/Remove Button */}
                                 <button
                                     className={`w-full transition font-bold py-2 rounded-lg flex items-center justify-center mt-8 border-2 ${isSaved
-                                            ? "bg-gray-50 text-[#DC143C] border-[#DC143C] hover:bg-[#DC143C] hover:text-white"
-                                            : "bg-[#DC143C] text-white border-[#DC143C] hover:bg-red-700"
+                                        ? "bg-gray-50 text-[#DC143C] border-[#DC143C] hover:bg-[#DC143C] hover:text-white"
+                                        : "bg-[#DC143C] text-white border-[#DC143C] hover:bg-red-700"
                                         }`}
                                     onClick={() => handleSave(product)}
                                 >
