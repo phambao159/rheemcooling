@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/rheemcooling/static/css/main.83efca0f.css",
+    "main.js": "/rheemcooling/static/js/main.00f1f85d.js",
+    "static/js/453.819bd979.chunk.js": "/rheemcooling/static/js/453.819bd979.chunk.js",
+    "static/media/headbanner.jpg": "/rheemcooling/static/media/headbanner.191b1c39eb49e4d1b6b3.jpg",
+    "static/media/mission.jpg": "/rheemcooling/static/media/mission.ed7918eacd35320e7bab.jpg",
+    "static/media/image2.jpg": "/rheemcooling/static/media/image2.666d0c40e6c35a609cbd.jpg",
+    "static/media/image1.jpg": "/rheemcooling/static/media/image1.2e63e37a2b0a0914c366.jpg",
+    "static/media/logo.png": "/rheemcooling/static/media/logo.c14ccd893aaac2fe5de3.png",
+    "static/media/image3.jpg": "/rheemcooling/static/media/image3.0737e76b8fa7cbaec183.jpg",
+    "index.html": "/rheemcooling/index.html",
+    "main.83efca0f.css.map": "/rheemcooling/static/css/main.83efca0f.css.map",
+    "main.00f1f85d.js.map": "/rheemcooling/static/js/main.00f1f85d.js.map",
+    "453.819bd979.chunk.js.map": "/rheemcooling/static/js/453.819bd979.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.83efca0f.css",
+    "static/js/main.00f1f85d.js"
+  ]
+}
