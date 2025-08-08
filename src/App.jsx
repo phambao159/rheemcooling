@@ -12,6 +12,7 @@ import product from "../src/data/product.json";
 import review from "../src/data/review.json";
 import RecentView from './components/RecentView';
 import SavedProduct from './pages/savedproduct/SavedProduct';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <VisitorCount />
 
       <div className="container mx-auto px-4">
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<RecentView />} ></Route>
           <Route path="/contact" element={<Contact />} ></Route>
@@ -29,9 +31,10 @@ function App() {
           <Route path="/windowAC" element={<div>Window AC</div>} ></Route>
           <Route path="/splitAC" element={<div>Split AC</div>} ></Route>
           <Route path="/cassetteAC" element={<div>Cassette AC</div>} ></Route>
-          <Route path="/savedproduct" element={<SavedProduct />} ></Route>
+          <Route path="/savedproduct" element={<SavedProduct review={review} />} ></Route>
           <Route path="/product/:id" element={<ProductDetail product={product} review={review} />} ></Route>
         </Routes>
+
       </div>
       <YourLocation />
       <Footer />

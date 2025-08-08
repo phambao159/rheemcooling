@@ -60,7 +60,7 @@ function Partners() {
                     {partners.map((partner) => (
                         <SwiperSlide key={partner.id}>
                             <img
-                                src={partner.url}
+                                src={`${process.env.PUBLIC_URL}${partner.url}`}
                                 alt={partner.id}
                                 className="w-full h-30 object-contain border border-gray-200 rounded-sm"
                             />
