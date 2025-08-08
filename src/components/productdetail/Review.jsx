@@ -52,7 +52,7 @@ function Review({ data }) {
                     <div key={re.review_id} className="bg-white shadow-sm p-4 rounded-md border border-gray-200 hover:shadow-md transition">
                         <div className="flex items-center gap-4 mb-2">
                             <img
-                                src={re.anonymized ? "/images/product_details/anonymous.jpg" : re.image}
+                                src={re.anonymized ? `${process.env.PUBLIC_URL}/images/anonymous.jpg` : re.image}
                                 alt="Reviewer"
                                 className="w-12 h-12 rounded-full object-cover border"
                             />
