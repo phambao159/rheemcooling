@@ -5,36 +5,16 @@ import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import SaveButton from '../components/SaveButton'; // 
 
 function RecentView() {
     const [recent, setRecent] = useState([]);
-    const [savedIds, setSavedIds] = useState([]);
 
     // Load recently viewed products
     useEffect(() => {
         const stored = JSON.parse(localStorage.getItem("recently_viewed")) || [];
         setRecent(stored);
     }, []);
-
-    // Load saved product IDs
-    useEffect(() => {
-        const saved = JSON.parse(localStorage.getItem("saved_product")) || [];
-        setSavedIds(saved.map(item => item.ac_id));
-    }, []);
-
-    // Toggle Save/Remove product
-    const handleSave = (product) => {
-        const saved = JSON.parse(localStorage.getItem("saved_product")) || [];
-        const existed = saved.find(s => s.ac_id === product.ac_id);
-
-        const updated = existed
-            ? saved.filter(s => s.ac_id !== product.ac_id)
-            : [...saved, product];
-
-        alert(existed ? "Removed from Saved successfully!" : "Saved successfully!");
-        localStorage.setItem("saved_product", JSON.stringify(updated));
-        setSavedIds(updated.map(item => item.ac_id));
-    };
 
     if (recent.length === 0) return null;
 
@@ -79,60 +59,48 @@ function RecentView() {
                         1024: { slidesPerView: 5 },
                     }}
                 >
-                    {recent.map((product) => {
-                        const isSaved = savedIds.includes(product.ac_id);
-
-                        return (
-                            <SwiperSlide
-                                key={product.ac_id}
-                                className="p-6 border border-gray-200 rounded-md hover:shadow-sm"
-                            >
-                                {/* Label row */}
-                                <div className="flex justify-between">
-                                    <p className={`px-2 font-bold rounded ${product.isNew ? "bg-[#DC143C] text-white" : "invisible"}`}>
-                                        New
+                    {recent.map((product) => (
+                        <SwiperSlide
+                            key={product.ac_id}
+                            className="p-6 border border-gray-200 rounded-md hover:shadow-sm"
+                        >
+                            {/* Label row */}
+                            <div className="flex justify-between">
+                                <p className={`px-2 font-bold rounded ${product.isNew ? "bg-[#DC143C] text-white" : "invisible"}`}>
+                                    New
+                                </p>
+                                {product.sale ? (
+                                    <p className="bg-yellow-400 text-black px-2 font-bold rounded">
+                                        -{product.sale}%
                                     </p>
-                                    {product.sale ? (
-                                        <p className="bg-yellow-400 text-black px-2 font-bold rounded">
-                                            -{product.sale}%
-                                        </p>
-                                    ) : <span />}
-                                </div>
+                                ) : <span />}
+                            </div>
 
-                                {/* Product Image */}
-                                <img
-                                    src={`https://storage.googleapis.com/rheemcooling/${product.brand}/${product.ac_id}/${product.ac_id}_img2.webp`}
-                                    alt={product.name}
-                                    className="w-full h-50 md:h-30 md:object-cover my-5 object-contain"
-                                />
+                            {/* Product Image */}
+                            <img
+                                src={`https://storage.googleapis.com/rheemcooling/${product.brand}/${product.ac_id}/${product.ac_id}_img2.webp`}
+                                alt={product.name}
+                                className="w-full h-50 md:h-30 md:object-cover my-5 object-contain"
+                            />
 
-                                {/* Product Name */}
-                                <Link
-                                    to={`/product/${product.ac_id}`}
-                                    className="font-bold text-sm line-clamp-3 hover:underline"
-                                >
-                                    {product.name}
-                                </Link>
+                            {/* Product Name */}
+                            <Link
+                                to={`/product/${product.ac_id}`}
+                                className="font-bold text-sm line-clamp-3 hover:underline"
+                            >
+                                {product.name}
+                            </Link>
 
-                                {/* Price */}
-                                <div className="flex gap-2 items-center mb-3">
-                                    <p className="font-bold text-[#DC143C]">${product.price}</p>
-                                    <p className="text-sm text-gray-500 line-through">${product.old_price}</p>
-                                </div>
+                            {/* Price */}
+                            <div className="flex gap-2 items-center mb-3">
+                                <p className="font-bold text-[#DC143C]">${product.price}</p>
+                                <p className="text-sm text-gray-500 line-through">${product.old_price}</p>
+                            </div>
 
-                                {/* Save/Remove Button */}
-                                <button
-                                    className={`w-full transition font-bold py-2 rounded-lg flex items-center justify-center mt-8 border-2 ${isSaved
-                                        ? "bg-gray-50 text-[#DC143C] border-[#DC143C] hover:bg-[#DC143C] hover:text-white"
-                                        : "bg-[#DC143C] text-white border-[#DC143C] hover:bg-red-700"
-                                        }`}
-                                    onClick={() => handleSave(product)}
-                                >
-                                    {isSaved ? "Remove Saved" : "Save Product"}
-                                </button>
-                            </SwiperSlide>
-                        );
-                    })}
+                            {/* SaveButton dùng w-full */}
+                            <SaveButton product={product} width={"w-2/3 md:w-full py-2"} />
+                        </SwiperSlide>
+                    ))}
                 </Swiper>
 
                 <div className="custom-swiper-pagination-recentview flex justify-center mt-6" />

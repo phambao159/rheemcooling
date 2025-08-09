@@ -8,3 +8,23 @@
     color: #DC143C;
     /* Màu đỏ tươi */
 }
+
+@keyframes slide-up {
+    0% {
+        transform: translate(-50%, 100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+}
+
+.popup-slide-up {
+    position: fixed;
+    bottom: 1.25rem;
+    /* bottom-5 */
+    left: 50%;
+    animation: slide-up 0.3s ease-out forwards;
+}
