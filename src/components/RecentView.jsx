@@ -78,7 +78,7 @@ function RecentView() {
 
                             {/* Product Image */}
                             <img
-                                src={`https://storage.googleapis.com/rheemcooling/${product.brand}/${product.ac_id}/${product.ac_id}_img2.webp`}
+                                src={`https://storage.googleapis.com/rheemcooling/${product.brand}/${product.ac_id}/${product.ac_id}_img1.webp`}
                                 alt={product.name}
                                 className="w-full h-50 md:h-30 md:object-cover my-5 object-contain"
                             />
