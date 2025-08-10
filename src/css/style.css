@@ -28,3 +28,12 @@
     left: 50%;
     animation: slide-up 0.3s ease-out forwards;
 }
+
+/* Ẩn navigation ở mobile (<768px) */
+@media (max-width: 767px) {
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        display: none !important;
+    }
+}

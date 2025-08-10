@@ -84,7 +84,7 @@ function Description({ data, review }) {
                         {["Fast", "Normal", "Saving"].map((type, idx) => (
                             <div
                                 key={type}
-                                className="px-5 py-3 border border-gray-300 text-sm rounded-lg hover:shadow hover:border-[#DC143C] transition cursor-pointer bg-gray-50 gap-3 flex md:flex-col lg:flex-row items-center"
+                                className="px-5 py-3 border border-gray-300 text-sm rounded-lg hover:shadow hover:border-[#DC143C] transition cursor-pointer bg-gray-50 gap-3 flex md:flex-col lg:flex-row items-center justify-center"
                             >
                                 {type === "Fast" && (
                                     <BoltIcon className="w-7 h-7 text-[#DC143C]" />
@@ -93,7 +93,7 @@ function Description({ data, review }) {
                                     <TruckIcon className="w-7 min-w-[28px] h-7 text-[#DC143C]" />
                                 )}
                                 {type === "Saving" && (
-                                    <ClockIcon className="w-7 h-7 text-[#DC143C]" />
+                                    <ClockIcon className="w-7 h-7 min-w-[28px] text-[#DC143C]" />
                                 )}
                                 <div className="flex flex-col items-center">
                                     <p className="font-medium">{type}</p>

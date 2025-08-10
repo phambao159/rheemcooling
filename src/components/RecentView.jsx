@@ -66,39 +66,43 @@ function RecentView() {
                         >
                             {/* Label row */}
                             <div className="flex justify-between">
-                                <p className={`px-2 font-bold rounded ${product.isNew ? "bg-[#DC143C] text-white" : "invisible"}`}>
+                                <p className={`px-2 font-bold rounded ${product.isNew ? 'bg-[#DC143C] text-white text-sm' : 'invisible text-sm'}`}>
                                     New
                                 </p>
                                 {product.sale ? (
-                                    <p className="bg-yellow-400 text-black px-2 font-bold rounded">
+                                    <p className="bg-yellow-400 text-black text-sm px-2 font-bold rounded">
                                         -{product.sale}%
                                     </p>
-                                ) : <span />}
+                                ) : (
+                                    <span />
+                                )}
                             </div>
 
                             {/* Product Image */}
                             <img
                                 src={`https://storage.googleapis.com/rheemcooling/${product.brand}/${product.ac_id}/${product.ac_id}_img1.webp`}
                                 alt={product.name}
-                                className="w-full h-50 md:h-30 md:object-cover my-5 object-contain"
+                                className="w-full h-50 md:h-30 my-5 object-contain"
                             />
 
                             {/* Product Name */}
                             <Link
                                 to={`/product/${product.ac_id}`}
-                                className="font-bold text-sm line-clamp-3 hover:underline"
+                                className="font-bold text-sm line-clamp-3 mt-5 hover:underline min-h-[3.6em] leading-[1.2em]"
                             >
                                 {product.name}
                             </Link>
 
                             {/* Price */}
-                            <div className="flex gap-2 items-center mb-3">
+                            <div className="flex gap-2 items-center my-5">
                                 <p className="font-bold text-[#DC143C]">${product.price}</p>
                                 <p className="text-sm text-gray-500 line-through">${product.old_price}</p>
                             </div>
 
                             {/* SaveButton dùng w-full */}
-                            <SaveButton product={product} width={"w-2/3 md:w-full py-2"} />
+                            <div className="flex justify-center">
+                                <SaveButton product={product} width={"w-4/5 md:w-full py-2"} />
+                            </div>
                         </SwiperSlide>
                     ))}
                 </Swiper>

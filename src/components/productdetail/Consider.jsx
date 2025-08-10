@@ -69,11 +69,11 @@ function Consider({ data, review }) {
                         return (
                             <SwiperSlide key={product.ac_id} className="p-6 border border-gray-200 rounded-md hover:shadow-sm">
                                 <div className="flex justify-between ">
-                                    <p className={`px-2 font-bold rounded ${product.isNew ? 'bg-[#DC143C] text-white' : 'invisible'}`}>
+                                    <p className={`px-2 font-bold rounded ${product.isNew ? 'bg-[#DC143C] text-white text-sm' : 'invisible text-sm'}`}>
                                         New
                                     </p>
                                     {product.sale ? (
-                                        <p className="bg-yellow-400 text-black px-2 font-bold rounded">
+                                        <p className="bg-yellow-400 text-black text-sm px-2 font-bold rounded">
                                             -{product.sale}%
                                         </p>
                                     ) : (
@@ -89,10 +89,11 @@ function Consider({ data, review }) {
 
                                 <Link
                                     to={`/product/${product.ac_id}`}
-                                    className="font-bold text-sm line-clamp-3 mt-5 hover:underline"
+                                    className="font-bold text-sm line-clamp-3 mt-5 hover:underline min-h-[3.6em] leading-[1.2em]"
                                 >
                                     {product.name}
                                 </Link>
+
 
                                 <div className="flex items-center gap-1 mt-1 mb-3">
                                     <StarSolid className="w-4 h-4 text-yellow-500" />
@@ -104,7 +105,9 @@ function Consider({ data, review }) {
                                     <p className="font-bold">${product.price}</p>
                                     <p className="text-sm text-gray-500 line-through">${product.old_price}</p>
                                 </div>
-                                <SaveButton product={product} width={"w-2/3 md:w-full py-2"} />
+                                <div className="flex justify-center">
+                                    <SaveButton product={product} width={"w-4/5 md:w-full py-2"} />
+                                </div>
                             </SwiperSlide>
                         );
                     })}
