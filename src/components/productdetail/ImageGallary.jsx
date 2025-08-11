@@ -1,18 +1,24 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Thumbs } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
-import "../../css/style.css"
-
+import "../../css/style.css";
 
 function ImageGallery({ data }) {
-
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
+    const mainSwiperRef = useRef(null);
+
+    // Khi data thay đổi => reset về slide đầu tiên
+    useEffect(() => {
+        if (mainSwiperRef.current?.swiper) {
+            mainSwiperRef.current.swiper.slideTo(0);
+        }
+    }, [data]);
 
     return (
-        <div className="image-gallery w-full grid grid-cols-10 ">
+        <div className="image-gallery w-full grid grid-cols-10">
             {/* Thumbnail - cột bên trái */}
             <Swiper
                 onSwiper={setThumbsSwiper}
@@ -36,6 +42,7 @@ function ImageGallery({ data }) {
 
             {/* Ảnh chính - bên phải */}
             <Swiper
+                ref={mainSwiperRef}
                 spaceBetween={10}
                 navigation={true}
                 thumbs={{ swiper: thumbsSwiper }}
@@ -48,7 +55,7 @@ function ImageGallery({ data }) {
                         <img
                             src={item.url}
                             alt={`Product ${item.id}`}
-                            className="w-3/5 h-full  mx-auto object-contain "
+                            className="w-full md:w-3/5 h-full mx-auto object-contain"
                         />
                     </SwiperSlide>
                 ))}

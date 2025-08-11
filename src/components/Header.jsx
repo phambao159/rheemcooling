@@ -49,7 +49,7 @@ function Header() {
             </div>
 
             {/* Desktop Menu */}
-            <div className="hidden lg:flex gap-x-10">
+            <div className="hidden lg:flex items-center gap-x-10">
               <div className="relative group">
                 <button className="flex items-center gap-x-1 text-sm font-semibold text-gray-900">
                   Product
@@ -117,6 +117,12 @@ function Header() {
               >
                 Customer Support
               </Link>
+              <Link
+                to="/savedproduct"
+                className="text-sm font-semibold text-white bg-[#DC143C] rounded-sm px-3 py-2"
+              >
+                Saved Product
+              </Link>
             </div>
           </nav>
 
@@ -170,6 +176,12 @@ function Header() {
               >
                 Customer Support
               </Link>
+              <Link
+                to="/savedproduct"
+                className="text-sm font-semibold text-white bg-[#DC143C] rounded-sm px-3 py-2"
+              >
+                Saved Product
+              </Link>
             </div>
           )}
         </header>
@@ -184,23 +196,7 @@ function Header() {
                 href="#"
                 className="text-sm text-white hover:underline font-semibold"
               >
-                air conditioner
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="text-sm text-white hover:underline font-semibold"
-              >
-                AC unit
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="text-sm text-white hover:underline font-semibold"
-              >
-                buy air conditioner
+                hot deals
               </a>
             </li>
             <li>
@@ -232,7 +228,7 @@ function Header() {
                 href="#"
                 className="text-sm text-white hover:underline font-semibold"
               >
-                smart AC
+                hot selling
               </a>
             </li>
           </ul>
