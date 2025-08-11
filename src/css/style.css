@@ -32,8 +32,8 @@
 /* Ẩn navigation ở mobile (<768px) */
 @media (max-width: 767px) {
 
-    .swiper-button-prev,
-    .swiper-button-next {
+    .swiper .swiper-button-prev,
+    .swiper .swiper-button-next {
         display: none !important;
     }
 }

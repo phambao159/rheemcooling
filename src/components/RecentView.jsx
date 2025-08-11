@@ -6,7 +6,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import SaveButton from '../components/SaveButton'; // 
-import "../css/style.css";
 
 function RecentView() {
     const [recent, setRecent] = useState([]);
@@ -27,7 +26,7 @@ function RecentView() {
                 {/* Custom Navigation Buttons */}
                 <button
                     id="custom-prev-recentview"
-                    className="absolute z-10 top-1/2 left-0 -translate-y-1/2 -translate-x-full cursor-pointer bg-white border border-gray-300 rounded-full p-2 shadow hover:bg-red-100 transition"
+                    className="hidden md:block absolute z-10 top-1/2 left-0 -translate-y-1/2 cursor-pointer bg-white border border-gray-300 rounded-full p-2 shadow hover:bg-red-100 transition"
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -36,7 +35,7 @@ function RecentView() {
 
                 <button
                     id="custom-next-recentview"
-                    className="absolute z-10 top-1/2 right-0 translate-y-[-50%] translate-x-full cursor-pointer bg-white border border-gray-300 rounded-full p-2 shadow hover:bg-red-100 transition"
+                    className="hidden md:block absolute z-10 top-1/2 right-0 -translate-y-1/2 cursor-pointer bg-white border border-gray-300 rounded-full p-2 shadow hover:bg-red-100 transition"
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
