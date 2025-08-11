@@ -47,18 +47,22 @@ const ProductCategory = ({ db }) => {
 
       {/* Product Grid */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 grid-rows-2 gap-4 sm:gap-6 mb-6">
-        {filteredProducts.map((product) => (
-          <div
-            key={product.ac_id}
-            className="p-3 sm:p-4 bg-white border rounded-lg shadow-sm hover:shadow-lg transition relative"
-          >
-            <ProductCard
-              product={product}
-              imageSrc={windowAC_vuong}
-              imageClassName="w-9/10 h-28 sm:h-36 md:h-40 object-contain rounded-md mb-3 sm:mb-4" // custom className tùy ý
-            />
-          </div>
-        ))}
+        {filteredProducts.map((product) => {
+          const imageUrl = `https://storage.googleapis.com/rheemcooling/${product.brand}/${product.ac_id}/${product.ac_id}_img1.webp`;
+          return (
+            <div
+              key={product.ac_id}
+              className="p-3 sm:p-4 bg-white border rounded-lg shadow-sm hover:shadow-lg transition relative"
+            >
+              <ProductCard
+                product={product}
+                imageSrc={imageUrl}
+                wrapperClassName="flex justify-center items-center h-28 sm:h-36 md:h-40"
+                imageClassName="max-w-9/10 max-h-full object-contain rounded-md mb-3 sm:mb-4" // custom className tùy ý
+              />
+            </div>
+          );
+        })}
       </div>
 
       {/* Xem thêm sản phẩm */}

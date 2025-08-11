@@ -10,6 +10,15 @@ import windowAC_vuong from "../../images/home/windowAC_vuong.jpg";
 import ProductCard from "../ProductCard";
 
 const TrendingProducts = ({ db }) => {
+  const shuffleArray = (array) => {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  };
+
   return (
     <section className="my-4 px-4 sm:px-6 py-4 sm:py-6 bg-white border rounded-lg">
       <div className="mb-4">
@@ -64,25 +73,29 @@ const TrendingProducts = ({ db }) => {
               768: { slidesPerView: 4, spaceBetween: 20 },
             }}
           >
-            {db.map((product) => (
-              <SwiperSlide key={product.ac_id}>
-                <div className="p-3 sm:p-4 bg-white border rounded-lg shadow-sm hover:shadow-lg transition relative">
-                  <ProductCard
-                    product={product}
-                    imageSrc={windowAC_vuong}
-                    imageClassName="w-9/10 h-42 sm:h-54 md:h-60 object-contain rounded-md mb-3 sm:mb-4" // custom className tùy ý
-                  />
+            {shuffleArray(db).map((product) => {
+              const imageUrl = `https://storage.googleapis.com/rheemcooling/${product.brand}/${product.ac_id}/${product.ac_id}_img1.webp`;
+              return (
+                <SwiperSlide key={product.ac_id}>
+                  <div className="p-3 sm:p-4 bg-white border rounded-lg shadow-sm hover:shadow-lg transition relative">
+                    <ProductCard
+                      product={product}
+                      imageSrc={imageUrl}
+                      wrapperClassName="flex justify-center items-center h-42 sm:h-54 md:h-60"
+                      imageClassName="max-w-9/10 max-h-full object-contain rounded-md mb-3 sm:mb-4" // custom className tùy ý
+                    />
 
-                  {/* Button */}
-                  <Link to="">
-                    {/* {`/product/${product.ac_id}`} */}
-                    <button className="w-full bg-[#DC143C] hover:bg-red-700 transition font-bold text-sm sm:text-base py-2 rounded-lg text-white flex items-center justify-center mt-4 hover:cursor-pointer">
-                      Save Product
-                    </button>
-                  </Link>
-                </div>
-              </SwiperSlide>
-            ))}
+                    {/* Button */}
+                    <Link to="">
+                      {/* {`/product/${product.ac_id}`} */}
+                      <button className="w-full bg-[#DC143C] hover:bg-red-700 transition font-bold text-sm sm:text-base py-2 rounded-lg text-white flex items-center justify-center mt-4 hover:cursor-pointer">
+                        Save Product
+                      </button>
+                    </Link>
+                  </div>
+                </SwiperSlide>
+              );
+            })}
           </Swiper>
         </div>
       </div>

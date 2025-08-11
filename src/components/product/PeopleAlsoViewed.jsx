@@ -4,7 +4,6 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
-import windowAC_vuong from "../../images/home/windowAC_vuong.jpg";
 import ProductCard from "../ProductCard";
 
 const ProductCategory = ({ db }) => {
@@ -52,22 +51,26 @@ const ProductCategory = ({ db }) => {
             1024: { slidesPerView: 5, spaceBetween: 20 },
           }}
         >
-          {db.map((product) => (
-            <SwiperSlide key={product.ac_id}>
-              <div className="p-4 bg-white border rounded-lg shadow-sm hover:shadow-lg transition relative">
-                <ProductCard
-                  product={product}
-                  imageSrc={windowAC_vuong}
-                  imageClassName="w-9/10 h-28 sm:h-36 md:h-40 object-contain rounded-md mb-3 sm:mb-4" // custom className tùy ý
-                />
+          {db.map((product) => {
+            const imageUrl = `https://storage.googleapis.com/rheemcooling/${product.brand}/${product.ac_id}/${product.ac_id}_img1.webp`;
+            return (
+              <SwiperSlide key={product.ac_id}>
+                <div className="p-4 bg-white border rounded-lg shadow-sm hover:shadow-lg transition relative">
+                  <ProductCard
+                    product={product}
+                    imageSrc={imageUrl}
+                    wrapperClassName="flex justify-center items-center h-28 sm:h-36 md:h-40"
+                    imageClassName="max-w-9/10 max-h-full object-contain rounded-md mb-3 sm:mb-4" // custom className tùy ý
+                  />
 
-                {/* Button */}
-                {/* <button className="w-full bg-[#DC143C] hover:bg-red-700 transition font-bold py-2 rounded-lg text-white flex items-center justify-center mt-5 hover:cursor-pointer ">
+                  {/* Button */}
+                  {/* <button className="w-full bg-[#DC143C] hover:bg-red-700 transition font-bold py-2 rounded-lg text-white flex items-center justify-center mt-5 hover:cursor-pointer ">
                   Save Product
                 </button> */}
-              </div>
-            </SwiperSlide>
-          ))}
+                </div>
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
       </div>
     </section>

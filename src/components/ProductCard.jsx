@@ -1,8 +1,13 @@
 import React from "react";
 
-const ProductCard = ({ product, imageSrc, imageClassName = "" }) => {
+const ProductCard = ({
+  product,
+  imageSrc,
+  wrapperClassName = "",
+  imageClassName = "",
+}) => {
   return (
-    <>
+    <div className="">
       {/* Label */}
       {product.isNew && (
         <span className="absolute top-2 left-2 bg-red-500 text-white text-[10px] sm:text-xs font-bold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded">
@@ -19,7 +24,7 @@ const ProductCard = ({ product, imageSrc, imageClassName = "" }) => {
       )} */}
 
       {/* Product Image */}
-      <div className="flex justify-center items-center">
+      <div className={wrapperClassName}>
         <img
           src={imageSrc}
           alt={product.name}
@@ -28,7 +33,7 @@ const ProductCard = ({ product, imageSrc, imageClassName = "" }) => {
       </div>
 
       {/* Product Info */}
-      <div className="text-left mt-2 sm:mt-3">
+      <div className="flex flex-col flex-grow mt-2 sm:mt-3">
         <h3 className="text-gray-800 font-semibold text-xs sm:text-sm md:text-base line-clamp-3">
           {product.name}
         </h3>
@@ -48,7 +53,7 @@ const ProductCard = ({ product, imageSrc, imageClassName = "" }) => {
           </span>
         </p>
       </div>
-    </>
+    </div>
   );
 };
 
