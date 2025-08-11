@@ -11,9 +11,7 @@ export default function FilterProduct({ db, onFilter }) {
   });
 
   const categorieList = Array.from(new Set(db.map((p) => p.type)));
-  const brandList = Array.from(new Set(db.map((p) => p.brand))).map(
-    (brand) => brand.charAt(0).toUpperCase() + brand.slice(1)
-  );
+  const brandList = Array.from(new Set(db.map((p) => p.brand)));
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
   const handleSetPrice = () => {
@@ -109,7 +107,7 @@ export default function FilterProduct({ db, onFilter }) {
                 })
               }
             />
-            {b}
+            {b.charAt(0).toUpperCase() + b.slice(1)}
           </label>
         ))}
       </div>
