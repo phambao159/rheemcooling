@@ -1,11 +1,128 @@
 [
     {
-        "location_id": "LOC_001",
-        "branch_name": "Main Branch - HCMC",
-        "address": "123 Nguyen Van Linh, District 7, Ho Chi Minh City",
-        "phone": "028-1234-5678",
-        "email": "support@coolair.vn",
-        "map_embed": "<iframe src='https://maps.google.com/...'></iframe>",
-        "is_active": true
+        "id": 1,
+        "country": "Canada",
+        "address": "125 Edgeware Rd Unit 1, Brampton, Ontario",
+        "mapSrc": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2888.38418511561!2d-79.77603042364424!3d43.61936217110379!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b6ac2b3000001%3A0xd3f784cd0b9860b!2s125%20Edgeware%20Rd%20Unit%201%2C%20Brampton%2C%20ON%20L6Y%200P5%2C%20Canada!5e0!3m2!1sen!2s!4v1754398589704!5m2!1sen!2s",
+        "in_active": false,
+        "email": "rodneywillis@mahoney.com",
+        "phone": "+1-964-256-2155"
+    },
+    {
+        "id": 2,
+        "country": "Australia",
+        "address": "2-10 Captain Cook Dr, Caringbah NSW 2229",
+        "mapSrc": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3306.455466493098!2d151.11880107592253!3d-34.03218587316454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12c7f5b833a6b5%3A0x2705e93217e7480f!2s210%20Captain%20Cook%20Dr%2C%20Caringbah%20NSW%202229%2C%20Australia!5e0!3m2!1sen!2s!4v1754398623217!5m2!1sen!2s",
+        "in_active": true,
+        "email": "john45@cruz.org",
+        "phone": "(592)796-9746"
+    },
+    {
+        "id": 3,
+        "country": "Germany",
+        "address": "Wittestraße 30, 13509 Berlin",
+        "mapSrc": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2424.381964665496!2d13.291331876836486!3d52.58078707207716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a8546daf87ddd5%3A0x5661184ae761a85!2sWittestra%C3%9Fe%2030%2C%2013509%20Berlin%2C%20Germany!5e0!3m2!1sen!2s!4v1754398422467!5m2!1sen!2s",
+        "in_active": true,
+        "email": "tammy88@carter.net",
+        "phone": "1863036771"
+    },
+    {
+        "id": 4,
+        "country": "Singapore",
+        "address": "1 Kallang Sector, Singapore 349276",
+        "mapSrc": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7489939415022!2d103.87100167521533!3d1.326556998660867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da1780ac773ea3%3A0x67f864b5dff0944e!2s1%20Kallang%20Sector%2C%20Singapore%20349276!5e0!3m2!1sen!2s!4v1754398538497!5m2!1sen!2s",
+        "in_active": true,
+        "email": "stephanie32@adkins.biz",
+        "phone": "417.757.8053"
+    },
+    {
+        "id": 5,
+        "country": "United Kingdom",
+        "address": "3 St James's Square, London SW1Y 4JU",
+        "mapSrc": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.289004629466!2d-0.13725232322449035!3d51.507913671813405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604d13162c003%3A0x5ad402d0ba7316e1!2s3%20St%20James&#39;s%20Square%2C%20London%20SW1Y%204JU%2C%20UK!5e0!3m2!1sen!2s!4v1754398829497!5m2!1sen!2s",
+        "in_active": true,
+        "email": "william76@watson-thomas.com",
+        "phone": "+1-990-031-1432"
+    },
+    {
+        "id": 6,
+        "country": "Gambia",
+        "address": " Trans-Gambia Hwy, Soma, Gambia",
+        "mapSrc": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4260.227948821775!2d-15.536863300011218!3d13.434738814567927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xee8ed75fb959cbd%3A0x7aa3258636176630!2sLFD%20Technologies!5e0!3m2!1sen!2s!4v1754398983517!5m2!1sen!2s",
+        "in_active": true,
+        "email": "evan51@mayer-nolan.com",
+        "phone": "001-760-452-3511"
+    },
+    {
+        "id": 7,
+        "country": "Isle of Man",
+        "address": "186 Austin Glen, North Aprilstad, IL 39296",
+        "mapSrc": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.816060152015!2d-73.9851301845937!3d40.75889607932712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25854d9f125d7%3A0x74a65d67f83c3c86!2sTimes+Square!5e0!3m2!1sen!2sus!4v1722322222222!5m2!1sen!2sus",
+        "in_active": false,
+        "email": "ngarner@ruiz.info",
+        "phone": "(907)026-1786"
+    },
+    {
+        "id": 8,
+        "country": "Algeria",
+        "address": "436G+CP6, Tebesbest, Algeria",
+        "mapSrc": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12335.012476632166!2d6.057632259272521!3d33.11423964945425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x125ebd52ccf347cb%3A0xb4df2fddaf5d419d!2sTribunal%20de%20Touggourt!5e0!3m2!1sen!2s!4v1754399100837!5m2!1sen!2s",
+        "in_active": true,
+        "email": "mgray@walters-ellis.net",
+        "phone": "(837)666-1906"
+    },
+    {
+        "id": 9,
+        "country": "Mexico",
+        "address": "98440 Zacatecas, Mexico",
+        "mapSrc": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d116983.44508486488!2d-102.64031129977126!3d23.613918963433004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86847767fd34be93%3A0x586a01b042c12694!2sHuatulco%20oaxaca!5e0!3m2!1sen!2s!4v1754399210436!5m2!1sen!2s",
+        "in_active": true,
+        "email": "ashley07@joyce.com",
+        "phone": "001-278-127-1216"
+    },
+    {
+        "id": 10,
+        "country": "USA",
+        "address": "1600 Amphitheatre Parkway, Mountain View, CA",
+        "mapSrc": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.6388762507727!2d-122.08732632393463!3d37.42200967207626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fba0263f6d1d3%3A0x1f8471207cea5ea0!2s1600%20Amphitheatre%20Pkwy%2C%20Mountain%20View%2C%20CA%2094043%2C%20USA!5e0!3m2!1sen!2s!4v1754399404369!5m2!1sen!2s",
+        "in_active": true,
+        "email": "mv.branch@example.com",
+        "phone": "+1-650-253-0000"
+    },
+    {
+        "id": 11,
+        "country": "USA",
+        "address": "1 Infinite Loop, Cupertino, CA",
+        "mapSrc": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.449748925469!2d-122.03282342393861!3d37.33185977210042!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb5b6dc43ff01%3A0x7c31e068b49902bb!2sInfinite%20Loop%201%2C%201%20Infinite%20Loop%2C%20Cupertino%2C%20CA%2095014%2C%20USA!5e0!3m2!1sen!2s!4v1754399429188!5m2!1sen!2s",
+        "in_active": true,
+        "email": "cupertino.branch@example.com",
+        "phone": "+1-408-996-1010"
+    },
+    {
+        "id": 12,
+        "country": "USA",
+        "address": "350 5th Ave, New York, NY 10118",
+        "mapSrc": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.617400250815!2d-73.98824212378337!3d40.748443571388115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b30eac9f%3A0xaca05ca48ab5ac2c!2s350%205th%20Ave%2C%20New%20York%2C%20NY%2010118%2C%20USA!5e0!3m2!1sen!2s!4v1754399455826!5m2!1sen!2s",
+        "in_active": true,
+        "email": "ny.branch@example.com",
+        "phone": "+1-212-736-3100"
+    },
+    {
+        "id": 13,
+        "country": "USA",
+        "address": "4059 Mt Lee Dr, Hollywood, CA 90068",
+        "mapSrc": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423286.8829845827!2d-118.74137866646602!3d34.020039200466336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bf9f3c0a7fe9%3A0xa9bd807ae646330a!2sMt%20Lee!5e0!3m2!1sen!2s!4v1754399481440!5m2!1sen!2s",
+        "in_active": true,
+        "email": "hollywood.branch@example.com",
+        "phone": "+1-323-258-4338"
+    },
+    {
+        "id": 14,
+        "country": "USA",
+        "address": "2211 North First Street, San Jose, CA 95131",
+        "mapSrc": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3170.558083263058!2d-121.92568612393666!3d37.37663217208852!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fcbe87262da89%3A0xc2206711224f2dac!2s2211%20N%20First%20St%2C%20San%20Jose%2C%20CA%2095131%2C%20USA!5e0!3m2!1sen!2s!4v1754399505043!5m2!1sen!2s",
+        "in_active": true,
+        "email": "sj.branch@example.com",
+        "phone": "+1-408-553-5800"
     }
 ]

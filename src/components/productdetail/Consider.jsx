@@ -1,134 +1,19 @@
-// CarouselComponent.jsx
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation, Pagination } from 'swiper/modules'
+// Consider.jsx
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
 import { StarIcon as StarSolid } from "@heroicons/react/20/solid";
 import { StarIcon as StarOutline } from "@heroicons/react/24/outline";
-import { HeartIcon } from "@heroicons/react/20/solid";
-import 'swiper/css'
-import 'swiper/css/navigation'
-import 'swiper/css/pagination'
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
-import img1 from '../../images/product_details/TCL_img1.jpg'
-
-
-function Consider() {
-    const data = [
-        {
-            ac_id: "Brand_AC001",
-            name: "TCL - 150 Sq. Ft. 5,000 BTU Window Air Conditioner with Mechanical Controls - white",
-            sale_quantity: 1000,
-            type: "Window",
-            power: "1.0 HP (9000 BTU)",
-            size: "770 x 240 x 180 mm",
-            weight: "9.5 kg",
-            description: "Inverter air conditioner saves electricity, operates smoothly, and filters dust and bacteria.",
-            brand: "Panasonic",
-            warranty: "2 years on-site warranty",
-            country: "Thailand",
-            price: 164.99,
-            old_price: 200,
-            stock_quantity: 100,
-            install_fee: 15,
-            color: "White",
-            sale: 18
-        }, {
-            ac_id: "Brand_AC001",
-            name: "TCL - 150 Sq. Ft. 5,000 BTU Window Air Conditioner with Mechanical Controls - white",
-            sale_quantity: 1000,
-            type: "Window",
-            power: "1.0 HP (9000 BTU)",
-            size: "770 x 240 x 180 mm",
-            weight: "9.5 kg",
-            description: "Inverter air conditioner saves electricity, operates smoothly, and filters dust and bacteria.",
-            brand: "Panasonic",
-            warranty: "2 years on-site warranty",
-            country: "Thailand",
-            price: 139.99,
-            old_price: 200,
-            stock_quantity: 100,
-            install_fee: 15,
-            color: "White",
-            sale: 18
-        }, {
-            ac_id: "Brand_AC001",
-            name: "TCL - 150 Sq. Ft. 5,000 BTU Window Air Conditioner with Mechanical Controls - white",
-            sale_quantity: 1000,
-            type: "Window",
-            power: "1.0 HP (9000 BTU)",
-            size: "770 x 240 x 180 mm",
-            weight: "9.5 kg",
-            description: "Inverter air conditioner saves electricity, operates smoothly, and filters dust and bacteria.",
-            brand: "Panasonic",
-            warranty: "2 years on-site warranty",
-            country: "Thailand",
-            price: 184.99,
-            old_price: 200,
-            stock_quantity: 100,
-            install_fee: 15,
-            color: "White",
-            sale: 18
-        }, {
-            ac_id: "Brand_AC001",
-            name: "TCL - 150 Sq. Ft. 5,000 BTU Window Air Conditioner with Mechanical Controls - white",
-            sale_quantity: 1000,
-            type: "Window",
-            power: "1.0 HP (9000 BTU)",
-            size: "770 x 240 x 180 mm",
-            weight: "9.5 kg",
-            description: "Inverter air conditioner saves electricity, operates smoothly, and filters dust and bacteria.",
-            brand: "Panasonic",
-            warranty: "2 years on-site warranty",
-            country: "Thailand",
-            price: 164.99,
-            old_price: 200,
-            stock_quantity: 100,
-            install_fee: 15,
-            color: "White",
-            sale: 18
-        }, {
-            ac_id: "Brand_AC001",
-            name: "TCL - 150 Sq. Ft. 5,000 BTU Window Air Conditioner with Mechanical Controls - white",
-            sale_quantity: 1000,
-            type: "Window",
-            power: "1.0 HP (9000 BTU)",
-            size: "770 x 240 x 180 mm",
-            weight: "9.5 kg",
-            description: "Inverter air conditioner saves electricity, operates smoothly, and filters dust and bacteria.",
-            brand: "Panasonic",
-            warranty: "2 years on-site warranty",
-            country: "Thailand",
-            price: 164.99,
-            old_price: 200,
-            stock_quantity: 100,
-            install_fee: 15,
-            color: "White",
-            sale: 18
-        }, {
-            ac_id: "Brand_AC001",
-            name: "TCL - 150 Sq. Ft. 5,000 BTU Window Air Conditioner with Mechanical Controls - white",
-            sale_quantity: 1000,
-            type: "Window",
-            power: "1.0 HP (9000 BTU)",
-            size: "770 x 240 x 180 mm",
-            weight: "9.5 kg",
-            description: "Inverter air conditioner saves electricity, operates smoothly, and filters dust and bacteria.",
-            brand: "Panasonic",
-            warranty: "2 years on-site warranty",
-            country: "Thailand",
-            price: 164.99,
-            old_price: 200,
-            stock_quantity: 100,
-            install_fee: 15,
-            color: "White",
-            sale: 18
-        }
-    ];
+function Consider({ data, review }) {
     return (
         <div className="partners px-4 md:px-0">
             <h2 className="text-2xl font-bold text-gray-800 mb-3">More to consider</h2>
 
             <div className="relative w-full px-6 py-10">
-
 
                 {/* Custom Navigation Buttons */}
                 <div
@@ -162,56 +47,63 @@ function Consider() {
                     }}
                     breakpoints={{
                         0: {
-                            slidesPerView: 1, // sm: 2 slide
+                            slidesPerView: 1,
                         },
                         768: {
-                            slidesPerView: 3, // md: 3 slide
+                            slidesPerView: 3,
                         },
                         1024: {
-                            slidesPerView: 5, // lg: 5 slide
+                            slidesPerView: 5,
                         },
                     }}
                     className="mySwiper"
                 >
-                    {data.map((product) => (
-                        <SwiperSlide key={product.ac_id} className="p-6 border border-gray-200 rounded-md hover:shadow-sm">
-                            <img
-                                src={img1}
-                                alt={product.name}
-                                className="w-full h-50 md:h-30 md:object-cover mb-3 md:mb-0"
-                            />
-                            <h2 className="font-bold text-sm " style={{
-                                display: '-webkit-box',
-                                WebkitLineClamp: 3,
-                                WebkitBoxOrient: 'vertical',
-                                overflow: 'hidden'
-                            }}>{product.name}</h2>
-                            <div className="flex items-center gap-1 mt-1 mb-3">
-                                {[...Array(4)].map((_, i) => (
-                                    <StarSolid key={i} className="w-4 h-4 text-yellow-500" />
-                                ))}
-                                {[...Array(1)].map((_, i) => (
-                                    <StarOutline key={i} className="w-4 h-4 text-gray-300" />
-                                ))} (8)
-                            </div>
-                            <div className="flex gap-2 items-center mb-3">
-                                <p className="font-bold">${product.price}</p>
-                                <p className="text-sm text-gray-500 line-through">${product.old_price}</p>
-                            </div>
+                    {data.map((product) => {
+                        const productReviews = review.filter(r => r.product_id === product.ac_id);
+                        const totalReviews = productReviews.length;
+                        const avgRating = totalReviews
+                            ? (productReviews.reduce((sum, r) => sum + r.rating, 0) / totalReviews).toFixed(1)
+                            : 0;
 
-                            <button className="w-full bg-[#DC143C] hover:bg-red-700 transition font-bold py-2 rounded-lg text-white flex items-center justify-center mt-8 hover:cursor-pointer ">
-                                Add to Save
-                            </button>
 
-                        </SwiperSlide>
-                    ))}
+                        return (
+                            <SwiperSlide key={product.ac_id} className="p-6 border border-gray-200 rounded-md hover:shadow-sm">
+                                <img
+                                    src={`https://storage.googleapis.com/rheemcooling/${product.brand}/${product.ac_id}/${product.ac_id}_img2.webp`}
+
+                                    alt={product.name}
+                                    className="w-full h-50 md:h-30 md:object-cover mb-3 md:mb-0 object-contain"
+                                />
+                                <h2 className="font-bold text-sm" style={{
+                                    display: '-webkit-box',
+                                    WebkitLineClamp: 3,
+                                    WebkitBoxOrient: 'vertical',
+                                    overflow: 'hidden'
+                                }}>{product.name}</h2>
+
+                                <div className="flex items-center gap-1 mt-1 mb-3">
+                                    <StarSolid className="w-4 h-4 text-yellow-500" />
+                                    <span className="text-sm text-gray-500">{avgRating}</span>
+                                    <span className="text-sm text-gray-500">| Sold {product.sale_quantity}</span>
+                                </div>
+
+                                <div className="flex gap-2 items-center mb-3">
+                                    <p className="font-bold">${product.price}</p>
+                                    <p className="text-sm text-gray-500 line-through">${product.old_price}</p>
+                                </div>
+
+                                <button className="w-full bg-[#DC143C] hover:bg-red-700 transition font-bold py-2 rounded-lg text-white flex items-center justify-center mt-8 hover:cursor-pointer ">
+                                    Add to Save
+                                </button>
+                            </SwiperSlide>
+                        );
+                    })}
                 </Swiper>
 
                 <div className="custom-swiper-pagination flex justify-center mt-6"></div>
             </div>
         </div>
-
-    )
+    );
 }
 
 export default Consider;

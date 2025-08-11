@@ -7,19 +7,7 @@ import "swiper/css/thumbs";
 import "../../css/style.css"
 
 
-function ImageGallery() {
-    const data = [
-        { id: "image1", url: require("../../images/product_details/TCL_img1.jpg") },
-        { id: "image2", url: require("../../images/product_details/TCL_img2.jpg") },
-        { id: "image3", url: require("../../images/product_details/TCL_img3.jpg") },
-        { id: "image4", url: require("../../images/product_details/TCL_img4.jpg") },
-        { id: "image5", url: require("../../images/product_details/TCL_img5.jpg") },
-        { id: "image6", url: require("../../images/product_details/TCL_img6.jpg") },
-        { id: "image7", url: require("../../images/product_details/TCL_img7.jpg") },
-        { id: "image8", url: require("../../images/product_details/TCL_img8.jpg") },
-        { id: "image9", url: require("../../images/product_details/TCL_img9.jpg") },
-        { id: "image10", url: require("../../images/product_details/TCL_img10.jpg") },
-    ];
+function ImageGallery({ data }) {
 
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
@@ -60,7 +48,7 @@ function ImageGallery() {
                         <img
                             src={item.url}
                             alt={`Product ${item.id}`}
-                            className="w-3/5 h-full  mx-auto "
+                            className="w-3/5 h-full  mx-auto object-contain "
                         />
                     </SwiperSlide>
                 ))}

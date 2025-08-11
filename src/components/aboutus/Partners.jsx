@@ -4,10 +4,7 @@ import { Navigation, Pagination } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
-
-import img1 from '../../images/aboutus/panasonic.jpg'
-
-const images = [img1, img1, img1, img1, img1, img1, img1, img1]
+import partners from "../../data/partners.json"
 
 function Partners() {
     return (
@@ -60,12 +57,12 @@ function Partners() {
                     }}
                     className="mySwiper"
                 >
-                    {images.map((src, index) => (
-                        <SwiperSlide key={index}>
+                    {partners.map((partner) => (
+                        <SwiperSlide key={partner.id}>
                             <img
-                                src={src}
-                                alt={`Slide ${index}`}
-                                className="w-full h-30 object-cover border border-gray-200 rounded-sm"
+                                src={partner.url}
+                                alt={partner.id}
+                                className="w-full h-30 object-contain border border-gray-200 rounded-sm"
                             />
                         </SwiperSlide>
                     ))}

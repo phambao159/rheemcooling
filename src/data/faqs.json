@@ -1,9 +1,182 @@
 [
     {
-        "faq_id": "FAQ_001",
-        "question": "How long does delivery take?",
-        "answer": "Delivery usually takes 2–5 business days depending on your location.",
-        "category": "Shipping",
-        "last_updated": "2025-07-15"
+        "id": 1,
+        "category": "Product & Features",
+        "question": "Are Rheem air conditioners energy-efficient?",
+        "answer": "Yes, Rheem units feature inverter technology to maximize energy savings."
+    },
+    {
+        "id": 2,
+        "category": "Product & Features",
+        "question": "Do the air conditioners have air purification features?",
+        "answer": "Some models include antibacterial filters and PM2.5 air purification systems."
+    },
+    {
+        "id": 3,
+        "category": "Product & Features",
+        "question": "Do Rheem air conditioners support smart control?",
+        "answer": "Yes, selected models support smart control via Wi-Fi and mobile apps."
+    },
+    {
+        "id": 4,
+        "category": "Product & Features",
+        "question": "What is the noise level of Rheem AC units?",
+        "answer": "Most units operate quietly at around 19-26 dB on low fan settings."
+    },
+    {
+        "id": 5,
+        "category": "Product & Features",
+        "question": "Can I use Rheem air conditioners for both cooling and heating?",
+        "answer": "Yes, our inverter models support both cooling and heating modes."
+    },
+    {
+        "id": 6,
+        "category": "Product & Features",
+        "question": "What type of refrigerant is used in Rheem ACs?",
+        "answer": "We use R32 refrigerant, which is eco-friendly and energy-efficient."
+    },
+    {
+        "id": 7,
+        "category": "Product & Features",
+        "question": "Are Rheem air conditioners safe for children and pets?",
+        "answer": "Yes, our units feature child lock functions and safety certifications."
+    },
+    {
+        "id": 8,
+        "category": "Product & Features",
+        "question": "Can I customize the airflow direction?",
+        "answer": "Yes, our ACs feature multi-directional swing and adjustable louvers."
+    },
+    {
+        "id": 9,
+        "category": "Product & Features",
+        "question": "What AC capacity is suitable for a 20m² room?",
+        "answer": "For a 20m² room, you should consider a unit with 1.0 to 1.5 HP capacity."
+    },
+    {
+        "id": 10,
+        "category": "Product & Features",
+        "question": "Are outdoor units weather-resistant?",
+        "answer": "Yes, all outdoor units are built to withstand harsh weather conditions."
+    },
+    {
+        "id": 11,
+        "category": "Service & Warranty",
+        "question": "How long is the warranty period?",
+        "answer": "Our products come with a manufacturer warranty ranging from 2 to 5 years depending on the model."
+    },
+    {
+        "id": 12,
+        "category": "Service & Warranty",
+        "question": "Do you offer installation services?",
+        "answer": "Yes, we provide nationwide professional installation services."
+    },
+    {
+        "id": 13,
+        "category": "Service & Warranty",
+        "question": "How often should I service my AC?",
+        "answer": "We recommend servicing every 3 to 6 months to maintain peak performance."
+    },
+    {
+        "id": 14,
+        "category": "Service & Warranty",
+        "question": "Can I return or exchange a product?",
+        "answer": "Yes, you can return or exchange within 7 days for products with manufacturer defects."
+    },
+    {
+        "id": 15,
+        "category": "Service & Warranty",
+        "question": "Are spare parts available for Rheem ACs?",
+        "answer": "Yes, we provide original spare parts for all models under warranty or post-warranty."
+    },
+    {
+        "id": 16,
+        "category": "Service & Warranty",
+        "question": "Do you offer extended warranty plans?",
+        "answer": "Yes, we offer optional extended warranty packages up to 10 years."
+    },
+    {
+        "id": 17,
+        "category": "Service & Warranty",
+        "question": "Is maintenance service included in the warranty?",
+        "answer": "Routine maintenance is not covered, but repairs for manufacturing faults are."
+    },
+    {
+        "id": 18,
+        "category": "Service & Warranty",
+        "question": "How can I request a repair service?",
+        "answer": "You can contact our hotline or submit a request via our official website."
+    },
+    {
+        "id": 19,
+        "category": "Service & Warranty",
+        "question": "Do you provide installation for high-rise buildings?",
+        "answer": "Yes, we offer installation for apartments and high-rise buildings with proper safety protocols."
+    },
+    {
+        "id": 20,
+        "category": "Service & Warranty",
+        "question": "How do I register my product for warranty?",
+        "answer": "You can register your product online using the serial number and invoice."
+    },
+    {
+        "id": 21,
+        "category": "Usage & Buying Tips",
+        "question": "What AC capacity is suitable for a 30m² room?",
+        "answer": "You should consider a unit with 2.0 to 2.5 HP for efficient cooling in a 30m² room."
+    },
+    {
+        "id": 22,
+        "category": "Usage & Buying Tips",
+        "question": "Does inverter technology really save electricity?",
+        "answer": "Yes. Inverter air conditioners can save 30–60% more energy compared to non-inverter models."
+    },
+    {
+        "id": 23,
+        "category": "Usage & Buying Tips",
+        "question": "Should I cover the outdoor unit from sunlight?",
+        "answer": "Partial shading is recommended as long as airflow remains unobstructed to enhance performance and durability."
+    },
+    {
+        "id": 24,
+        "category": "Usage & Buying Tips",
+        "question": "Is it okay to set the AC temperature below 20°C?",
+        "answer": "It’s not recommended. The ideal temperature for comfort and efficiency is around 25–27°C."
+    },
+    {
+        "id": 25,
+        "category": "Usage & Buying Tips",
+        "question": "Does turning the AC on and off frequently waste energy?",
+        "answer": "Yes. Frequent restarts consume more energy than maintaining a stable operation."
+    },
+    {
+        "id": 26,
+        "category": "Usage & Buying Tips",
+        "question": "How often should I clean or service my air conditioner?",
+        "answer": "Clean the filters every 1–2 months and schedule professional servicing every 6 months."
+    },
+    {
+        "id": 27,
+        "category": "Usage & Buying Tips",
+        "question": "Can I install the indoor unit near a window?",
+        "answer": "It's better to avoid installing it near direct sunlight or drafts to ensure optimal cooling."
+    },
+    {
+        "id": 28,
+        "category": "Usage & Buying Tips",
+        "question": "How can I use the remote to save power?",
+        "answer": "Use Sleep or Eco mode, set the temperature above 26°C, and use the timer function when sleeping."
+    },
+    {
+        "id": 29,
+        "category": "Usage & Buying Tips",
+        "question": "Do air conditioners help eliminate odors?",
+        "answer": "Some models come with deodorizing or ionizer filters to improve indoor air quality."
+    },
+    {
+        "id": 30,
+        "category": "Usage & Buying Tips",
+        "question": "How do I check the model of my AC unit?",
+        "answer": "You can find the model number on a label on the indoor unit or inside the user manual."
     }
 ]

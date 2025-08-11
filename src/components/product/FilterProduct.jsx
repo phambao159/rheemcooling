@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 
 export default function FilterProduct({ db, onFilter }) {
   const [filterOption, setFilterOption] = useState({
@@ -11,7 +11,9 @@ export default function FilterProduct({ db, onFilter }) {
   });
 
   const categorieList = Array.from(new Set(db.map((p) => p.type)));
-  const brandList = Array.from(new Set(db.map((p) => p.brand)));
+  const brandList = Array.from(new Set(db.map((p) => p.brand))).map(
+    (brand) => brand.charAt(0).toUpperCase() + brand.slice(1)
+  );
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
   const handleSetPrice = () => {
@@ -24,41 +26,46 @@ export default function FilterProduct({ db, onFilter }) {
     }));
   };
 
-  const filteredProducts = db.filter((product) => {
+  const filteredProducts = useMemo(() => {
     const { category, brand, priceRange, power, size, features } = filterOption;
 
-    const matchCategory =
-      category.length === 0 || category.includes(product.type);
-    const matchBrand = brand.length === 0 || brand.includes(product.brand);
-    const matchPrice =
-      product.price >= priceRange[0] && product.price <= priceRange[1];
-    const matchPower = power.length === 0 || power.includes(product.power);
-    const matchSize = size.length === 0 || size.includes(product.size);
-    const matchFeatures =
-      features.length === 0 ||
-      features.every((f) => product.features?.includes(f));
+    return db.filter((product) => {
+      const matchCategory =
+        category.length === 0 || category.includes(product.type);
+      const matchBrand = brand.length === 0 || brand.includes(product.brand);
+      const matchPrice =
+        product.price >= priceRange[0] && product.price <= priceRange[1];
+      const matchPower = power.length === 0 || power.includes(product.power);
+      const matchSize = size.length === 0 || size.includes(product.size);
+      const matchFeatures =
+        features.length === 0 ||
+        features.every((f) => product.features?.includes(f));
 
-    return (
-      matchCategory &&
-      matchBrand &&
-      matchPrice &&
-      matchPower &&
-      matchSize &&
-      matchFeatures
-    );
-  });
+      return (
+        matchCategory &&
+        matchBrand &&
+        matchPrice &&
+        matchPower &&
+        matchSize &&
+        matchFeatures
+      );
+    });
+  }, [db, filterOption]);
 
   useEffect(() => {
     onFilter(filteredProducts);
-  }, [onFilter, filteredProducts]);
+  }, [filteredProducts]);
 
   return (
-    <div className="h-full border rounded-md p-4 space-y-6 overflow-y-auto max-h-screen">
+    <div className="p-4 bg-white border rounded-lg space-y-6 h-auto md:h-full max-h-none md:max-h-screen md:overflow-y-auto">
       {/* Category */}
       <div>
-        <h3 className="font-semibold mb-2">Category</h3>
+        <h3 className="text-[#dc143c] font-semibold mb-2">Category</h3>
         {categorieList.map((c) => (
-          <label key={c} className="block">
+          <label
+            key={c}
+            className="flex items-center gap-1 flex-wrap text-sm sm:text-base"
+          >
             <input
               type="checkbox"
               className="mr-2"
@@ -81,9 +88,12 @@ export default function FilterProduct({ db, onFilter }) {
 
       {/* Brand */}
       <div>
-        <h3 className="font-semibold mb-2">Brand</h3>
+        <h3 className="text-[#dc143c] font-semibold mb-2">Brand</h3>
         {brandList.map((b) => (
-          <label key={b} className="block">
+          <label
+            key={b}
+            className="flex items-center gap-1 flex-wrap text-sm sm:text-base"
+          >
             <input
               type="checkbox"
               className="mr-2"
@@ -106,25 +116,25 @@ export default function FilterProduct({ db, onFilter }) {
 
       {/* Price Range */}
       <div>
-        <h3 className="font-semibold mb-2">Price</h3>
-        <div className="flex items-center gap-2 mb-2">
+        <h3 className="text-[#dc143c] font-semibold mb-2">Price</h3>
+        <div className="flex flex-col lg:flex-row items-center gap-2 mb-2">
           <input
             type="number"
             placeholder="Min"
-            className="border p-1 w-full"
+            className="border p-1 w-full lg:w-[30%] sm:flex-1"
             value={minPrice}
             onChange={(e) => setMinPrice(e.target.value)}
           />
-          <span>to</span>
+          {/* <span className="my-2 md:mx-1">to</span> */}
           <input
             type="number"
             placeholder="Max"
-            className="border p-1 w-full"
+            className="border p-1 w-full lg:w-[30%] sm:flex-1"
             value={maxPrice}
             onChange={(e) => setMaxPrice(e.target.value)}
           />
           <button
-            className="bg-blue-500 text-white px-3 py-1 rounded"
+            className="px-3 py-1 bg-[#dc143c] text-white rounded hover:bg-red-700 whitespace-nowrap w-full lg:w-[30%]"
             onClick={handleSetPrice}
           >
             Set
@@ -141,15 +151,18 @@ export default function FilterProduct({ db, onFilter }) {
           { label: "Over $749.99", min: 749.99, max: Infinity },
         ].map(({ label, min, max }) => (
           <div key={label}>
-            <label className="flex gap-2 items-center mb-1">
+            <label className="flex gap-2 items-center flex-wrap mb-1 text-sm sm:text-base">
               <input
                 type="checkbox"
                 name="price"
-                onChange={() =>
-                  setFilterOption((prev) => ({
-                    ...prev,
-                    priceRange: [min, max],
-                  }))
+                onChange={(e) =>
+                  setFilterOption((prev) => {
+                    if (e.target.checked) {
+                      return { ...prev, priceRange: [min, max] };
+                    } else {
+                      return { ...prev, priceRange: [0, Infinity] };
+                    }
+                  })
                 }
               />
               {label}
@@ -160,9 +173,12 @@ export default function FilterProduct({ db, onFilter }) {
 
       {/* Power */}
       <div>
-        <h3 className="font-semibold mb-2">Power</h3>
+        <h3 className="text-[#dc143c] font-semibold mb-2">Power</h3>
         {["1HP", "1.5HP", "2HP", "2.5HP"].map((p) => (
-          <label key={p} className="block">
+          <label
+            key={p}
+            className="flex items-center gap-1 flex-wrap text-sm sm:text-base"
+          >
             <input
               type="checkbox"
               className="mr-2"
@@ -185,7 +201,7 @@ export default function FilterProduct({ db, onFilter }) {
 
       {/* Size */}
       {/* <div>
-        <h3 className="font-semibold mb-2">Size</h3>
+        <h3 className="text-[#dc143c] font-semibold mb-2">Size</h3>
         {["Small", "Medium", "Large"].map((s) => (
           <label key={s} className="block">
             <input
@@ -210,7 +226,7 @@ export default function FilterProduct({ db, onFilter }) {
 
       {/* Features */}
       {/* <div>
-        <h3 className="font-semibold mb-2">Features</h3>
+        <h3 className="text-[#dc143c] font-semibold mb-2">Features</h3>
         {["Inverter", "Fast Cooling", "Energy Saving", "Dehumidifier"].map(
           (f) => (
             <label key={f} className="block">
