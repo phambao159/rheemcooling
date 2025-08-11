@@ -67,9 +67,10 @@ const ProductCategory = ({ db }) => {
       {/* Xem thêm sản phẩm */}
       <div className="text-center font-bold text-blue-600 text-sm sm:text-base">
         <Link to="/topsellingAC">
-          <a href="blank">View more products {">>"} </a>
+          View more products {">>"}
         </Link>
       </div>
+
     </section>
   );
 };

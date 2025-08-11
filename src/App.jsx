@@ -26,7 +26,7 @@ function App() {
         <div className="container mx-auto px-4">
           <ScrollToTop />
           <Routes>
-            <Route path="/" element={<Home />}></Route> {/* RecentView */}
+            <Route path="/" element={<Home />}></Route>
             <Route path="/contact" element={<Contact />}></Route>
             <Route
               path="/customersupport"
