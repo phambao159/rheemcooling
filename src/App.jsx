@@ -22,7 +22,7 @@ function App() {
       <Header />
       <VisitorCount />
 
-      <div className="bg-gray-50">
+      <div className="app">
         <div className="container mx-auto px-4">
           <ScrollToTop />
           <Routes>
