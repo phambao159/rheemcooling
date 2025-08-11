@@ -52,15 +52,14 @@ function ImageGallery({ data }) {
             >
                 {data.map((item) => (
                     <SwiperSlide key={item.id}>
-                        <div className="flex items-center justify-center w-full h-full">
+                        <div className="flex justify-center">
                             <img
                                 src={item.url}
                                 alt={`Product ${item.id}`}
-                                className="max-w-full max-h-full object-contain"
+                                className="w-full md:w-3/5 h-full mx-auto object-contain"
                             />
                         </div>
                     </SwiperSlide>
-
                 ))}
             </Swiper>
         </div>
