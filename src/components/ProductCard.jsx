@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ProductCard = ({
   product,
@@ -33,10 +34,10 @@ const ProductCard = ({
       </div>
 
       {/* Product Info */}
-      <div className="flex flex-col flex-grow mt-2 sm:mt-3">
-        <h3 className="text-gray-800 font-semibold text-xs sm:text-sm md:text-base line-clamp-3">
+      <div className="flex flex-col flex-grow ">
+        <Link to={`/product/${product.ac_id}`} className="text-gray-800 font-bold line-clamp-3 mt-5 hover:underline min-h-[3.6em] leading-normal">
           {product.name}
-        </h3>
+        </Link>
         <div className="flex items-baseline gap-2 sm:gap-3 mt-1 sm:mt-2 mb-1">
           <p className="text-[#dc143c] font-bold text-sm sm:text-lg md:text-xl">
             $ {product.price}

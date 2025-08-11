@@ -32,7 +32,7 @@ function Mission() {
                 </div>
             </div>
             <div className="mt-5 pt-5">
-                <img src={mission} alt="Misson Image" className="w-full h-100 object-cover object-center border border-gray-200 rounded-3xl" />
+                <img src={mission} alt="Misson Image" className="w-full !h-150 object-cover object-center border border-gray-200 rounded-3xl" />
             </div>
         </div>
     );

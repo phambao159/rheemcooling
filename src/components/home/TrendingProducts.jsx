@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import banner_2 from "../../images/home/banner_2.jpg";
 import windowAC_vuong from "../../images/home/windowAC_vuong.jpg";
 import ProductCard from "../ProductCard";
+import SaveButton from "../SaveButton";
 
 const TrendingProducts = ({ db }) => {
   const shuffleArray = (array) => {
@@ -86,12 +87,9 @@ const TrendingProducts = ({ db }) => {
                     />
 
                     {/* Button */}
-                    <Link to="">
-                      {/* {`/product/${product.ac_id}`} */}
-                      <button className="w-full bg-[#DC143C] hover:bg-red-700 transition font-bold text-sm sm:text-base py-2 rounded-lg text-white flex items-center justify-center mt-4 hover:cursor-pointer">
-                        Save Product
-                      </button>
-                    </Link>
+                    <div className="flex justify-center mt-5">
+                      <SaveButton product={product} width={"w-4/5 md:w-full py-2"} />
+                    </div>
                   </div>
                 </SwiperSlide>
               );

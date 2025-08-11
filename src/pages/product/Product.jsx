@@ -4,7 +4,7 @@ import Products from "../../data/product.json";
 import FilterProduct from "../../components/product/FilterProduct";
 import Sort from "../../components/product/Sort";
 import FinalList from "../../components/product/FinalList";
-import PeopleAlsoViewed from "../../components/product/PeopleAlsoViewed";
+import RecentView from "../../components/RecentView";
 
 export default function Product() {
   const [filteredList, setFilteredList] = useState([]);
@@ -57,9 +57,11 @@ export default function Product() {
           )}
         </section>
       </div>
-
+      <div>
+        <RecentView />
+      </div>
       {/* People Also Viewed */}
-      <PeopleAlsoViewed db={Products} />
+
     </div>
   );
 }

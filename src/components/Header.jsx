@@ -119,7 +119,7 @@ function Header() {
               </Link>
               <Link
                 to="/savedproduct"
-                className="text-sm font-semibold text-white bg-[#DC143C] rounded-sm px-3 py-2"
+                className="text-sm font-semibold text-white bg-[#DC143C] rounded-lg px-3 py-2"
               >
                 Saved Product
               </Link>

@@ -62,7 +62,7 @@ function Partners() {
                             <img
                                 src={`${process.env.PUBLIC_URL}${partner.url}`}
                                 alt={partner.id}
-                                className="w-full h-30 object-contain border border-gray-200 rounded-sm"
+                                className="w-full !h-30 object-contain border border-gray-200 rounded-sm"
                             />
                         </SwiperSlide>
                     ))}

@@ -62,7 +62,7 @@ function RecentView() {
                     {recent.map((product) => (
                         <SwiperSlide
                             key={product.ac_id}
-                            className="p-6 border border-gray-200 rounded-md hover:shadow-sm"
+                            className="p-6 bg-white border border-gray-200 rounded-md hover:shadow-sm"
                         >
                             {/* Label row */}
                             <div className="flex justify-between">
@@ -79,11 +79,13 @@ function RecentView() {
                             </div>
 
                             {/* Product Image */}
-                            <img
-                                src={`https://storage.googleapis.com/rheemcooling/${product.brand}/${product.ac_id}/${product.ac_id}_img1.webp`}
-                                alt={product.name}
-                                className="w-full h-50 md:h-30 my-5 object-contain"
-                            />
+                            <div className="w-full h-[180px] md:h-[150px] flex justify-center items-center">
+                                <img
+                                    src={`https://storage.googleapis.com/rheemcooling/${product.brand}/${product.ac_id}/${product.ac_id}_img1.webp`}
+                                    alt={product.name}
+                                    className="max-h-full object-contain"
+                                />
+                            </div>
 
                             {/* Product Name */}
                             <Link

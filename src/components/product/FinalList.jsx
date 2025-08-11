@@ -6,6 +6,7 @@ import "swiper/css/navigation";
 import { Link } from "react-router-dom";
 
 import ProductCard from "../ProductCard";
+import SaveButton from "../SaveButton";
 
 const FinalList = ({ db, visibleCount }) => {
   return (
@@ -25,12 +26,8 @@ const FinalList = ({ db, visibleCount }) => {
             />
 
             {/* Button */}
-            <div className="">
-              <Link to={`/product/${product.ac_id}`}>
-                <button className="w-full bg-[#DC143C] hover:bg-red-700 transition font-bold text-sm sm:text-base px-4 py-2 rounded-lg text-white mt-5 hover:cursor-pointer ">
-                  Save Product
-                </button>
-              </Link>
+            <div className="flex justify-center mt-5">
+              <SaveButton product={product} width={"w-4/5 md:w-full py-2"} />
             </div>
           </div>
         );
