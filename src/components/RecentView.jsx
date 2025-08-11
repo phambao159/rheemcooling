@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import SaveButton from '../components/SaveButton'; // 
+import { H2Icon } from "@heroicons/react/16/solid";
 
 function RecentView() {
     const [recent, setRecent] = useState([]);
@@ -62,56 +63,59 @@ function RecentView() {
                     {recent.map((product) => (
                         <SwiperSlide
                             key={product.ac_id}
-                            className="p-6 bg-white border border-gray-200 rounded-md hover:shadow-sm"
+                            className="p-6 bg-white border border-gray-200 rounded-md hover:shadow-lg"
                         >
-                            {/* Label row */}
-                            <div className="flex justify-between">
-                                <p className={`px-2 font-bold rounded ${product.isNew ? 'bg-[#DC143C] text-white text-sm' : 'invisible text-sm'}`}>
-                                    New
-                                </p>
-                                {product.sale ? (
-                                    <p className="bg-yellow-400 text-black text-sm px-2 font-bold rounded">
-                                        -{product.sale}%
+                            <Link to={`/product/${product.ac_id}`}>
+                                <div className="flex justify-between">
+                                    <p className={`px-2 font-bold rounded ${product.isNew ? 'bg-[#DC143C] text-white text-sm' : 'invisible text-sm'}`}>
+                                        New
                                     </p>
-                                ) : (
-                                    <span />
-                                )}
-                            </div>
+                                    {product.sale ? (
+                                        <p className="bg-yellow-400 text-black text-sm px-2 font-bold rounded">
+                                            -{product.sale}%
+                                        </p>
+                                    ) : (
+                                        <span />
+                                    )}
+                                </div>
 
-                            {/* Product Image */}
-                            <div className="w-full h-[180px] md:h-[150px] flex justify-center items-center">
-                                <img
-                                    src={`https://storage.googleapis.com/rheemcooling/${product.brand}/${product.ac_id}/${product.ac_id}_img1.webp`}
-                                    alt={product.name}
-                                    className="max-h-full object-contain"
-                                />
-                            </div>
+                                {/* Product Image */}
+                                <div className="w-full h-[180px] md:h-[150px] flex justify-center items-center">
+                                    <img
+                                        src={`https://storage.googleapis.com/rheemcooling/${product.brand}/${product.ac_id}/${product.ac_id}_img1.webp`}
+                                        alt={product.name}
+                                        className="max-h-full object-contain"
+                                    />
+                                </div>
 
-                            {/* Product Name */}
-                            <Link
-                                to={`/product/${product.ac_id}`}
-                                className="font-bold text-sm line-clamp-3 mt-5 hover:underline min-h-[3.6em] leading-[1.2em]"
-                            >
-                                {product.name}
+                                {/* Product Name */}
+                                <h2
+
+                                    className="font-bold text-sm line-clamp-3 mt-5 hover:underline min-h-[3.6em] leading-[1.2em]"
+                                >
+                                    {product.name}
+                                </h2>
+
+                                {/* Price */}
+                                <div className="flex gap-2 items-center my-5">
+                                    <p className="font-bold text-[#DC143C]">${product.price}</p>
+                                    <p className="text-sm text-gray-500 line-through">${product.old_price}</p>
+                                </div>
+
+                                {/* SaveButton dùng w-full */}
+                                <div className="flex justify-center">
+                                    <SaveButton product={product} width={"w-4/5 md:w-full py-2"} />
+                                </div>
                             </Link>
-
-                            {/* Price */}
-                            <div className="flex gap-2 items-center my-5">
-                                <p className="font-bold text-[#DC143C]">${product.price}</p>
-                                <p className="text-sm text-gray-500 line-through">${product.old_price}</p>
-                            </div>
-
-                            {/* SaveButton dùng w-full */}
-                            <div className="flex justify-center">
-                                <SaveButton product={product} width={"w-4/5 md:w-full py-2"} />
-                            </div>
                         </SwiperSlide>
+
                     ))}
                 </Swiper>
 
                 <div className="custom-swiper-pagination-recentview flex justify-center mt-6" />
             </div>
-        </div>
+
+        </div >
     );
 }
 

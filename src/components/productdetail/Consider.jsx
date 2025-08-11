@@ -67,50 +67,52 @@ function Consider({ data, review }) {
                             : 0;
 
                         return (
-                            <SwiperSlide key={product.ac_id} className="p-6 border border-gray-200 rounded-md hover:shadow-sm">
-                                <div className="flex justify-between ">
-                                    <p className={`px-2 font-bold rounded ${product.isNew ? 'bg-[#DC143C] text-white text-sm' : 'invisible text-sm'}`}>
-                                        New
-                                    </p>
-                                    {product.sale ? (
-                                        <p className="bg-yellow-400 text-black text-sm px-2 font-bold rounded">
-                                            -{product.sale}%
+                            <SwiperSlide key={product.ac_id} className="p-6 border border-gray-200 rounded-md hover:shadow-lg">
+                                <Link to={`/product/${product.ac_id}`}>
+                                    <div className="flex justify-between ">
+                                        <p className={`px-2 font-bold rounded ${product.isNew ? 'bg-[#DC143C] text-white text-sm' : 'invisible text-sm'}`}>
+                                            New
                                         </p>
-                                    ) : (
-                                        <span />
-                                    )}
-                                </div>
+                                        {product.sale ? (
+                                            <p className="bg-yellow-400 text-black text-sm px-2 font-bold rounded">
+                                                -{product.sale}%
+                                            </p>
+                                        ) : (
+                                            <span />
+                                        )}
+                                    </div>
 
-                                <div className="w-full h-[180px] md:h-[150px] flex justify-center items-center">
-                                    <img
-                                        src={`https://storage.googleapis.com/rheemcooling/${product.brand}/${product.ac_id}/${product.ac_id}_img1.webp`}
-                                        alt={product.name}
-                                        className="max-h-full object-contain"
-                                    />
-                                </div>
+                                    <div className="w-full h-[180px] md:h-[150px] flex justify-center items-center">
+                                        <img
+                                            src={`https://storage.googleapis.com/rheemcooling/${product.brand}/${product.ac_id}/${product.ac_id}_img1.webp`}
+                                            alt={product.name}
+                                            className="max-h-full object-contain"
+                                        />
+                                    </div>
 
 
-                                <Link
-                                    to={`/product/${product.ac_id}`}
-                                    className="font-bold text-sm line-clamp-3 mt-5 hover:underline min-h-[3.6em] leading-[1.2em]"
-                                >
-                                    {product.name}
+                                    <h2
+
+                                        className="font-bold text-sm line-clamp-3 mt-5 hover:underline min-h-[3.6em] leading-[1.2em]"
+                                    >
+                                        {product.name}
+                                    </h2>
+
+
+                                    <div className="flex items-center gap-1 mt-1 mb-3">
+                                        <StarSolid className="w-4 h-4 text-yellow-500" />
+                                        <span className="text-sm text-gray-500">{avgRating}</span>
+                                        <span className="text-sm text-gray-500">| Sold {product.sale_quantity}</span>
+                                    </div>
+
+                                    <div className="flex gap-2 items-center mb-5">
+                                        <p className="font-bold">${product.price}</p>
+                                        <p className="text-sm text-gray-500 line-through">${product.old_price}</p>
+                                    </div>
+                                    <div className="flex justify-center">
+                                        <SaveButton product={product} width={"w-4/5 md:w-full py-2"} />
+                                    </div>
                                 </Link>
-
-
-                                <div className="flex items-center gap-1 mt-1 mb-3">
-                                    <StarSolid className="w-4 h-4 text-yellow-500" />
-                                    <span className="text-sm text-gray-500">{avgRating}</span>
-                                    <span className="text-sm text-gray-500">| Sold {product.sale_quantity}</span>
-                                </div>
-
-                                <div className="flex gap-2 items-center mb-5">
-                                    <p className="font-bold">${product.price}</p>
-                                    <p className="text-sm text-gray-500 line-through">${product.old_price}</p>
-                                </div>
-                                <div className="flex justify-center">
-                                    <SaveButton product={product} width={"w-4/5 md:w-full py-2"} />
-                                </div>
                             </SwiperSlide>
                         );
                     })}

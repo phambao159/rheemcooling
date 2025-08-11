@@ -40,7 +40,7 @@ function SavedProduct({ review = [] }) {
                         ? (productReviews.reduce((sum, r) => sum + r.rating, 0) / totalReviews).toFixed(1)
                         : 0;
                     return (
-                        <div key={product.ac_id} className="col-span-8 md:col-span-4 lg:col-span-2  p-6 border border-gray-200 rounded-md hover:shadow-sm ">
+                        <Link key={product.ac_id} to={`/product/${product.ac_id}`} className="col-span-8 md:col-span-4 lg:col-span-2  p-6 border border-gray-200 rounded-md hover:shadow-lg ">
                             <div className="flex justify-end">
                                 <button onClick={() => handleDelete(product.ac_id)}><X /></button>
                             </div>
@@ -50,12 +50,12 @@ function SavedProduct({ review = [] }) {
                                 alt={product.name}
                                 className="w-full h-50 my-5 md:mb-0 object-contain"
                             />
-                            <Link
-                                to={`/product/${product.ac_id}`}
+                            <h2
+
                                 className="font-bold text-sm line-clamp-3 mt-5 hover:underline min-h-[3.6em] leading-[1.2em]"
                             >
                                 {product.name}
-                            </Link>
+                            </h2>
 
                             <div className="flex items-center gap-1 mt-1 mb-3">
                                 <StarSolid className="w-4 h-4 text-yellow-500" />
@@ -67,7 +67,7 @@ function SavedProduct({ review = [] }) {
                                 <p className="text-sm text-gray-500 line-through">${product.old_price}</p>
                             </div>
 
-                        </div>
+                        </Link>
                     );
                 })}
             </div>
