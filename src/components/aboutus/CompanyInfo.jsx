@@ -14,10 +14,10 @@ function CompanyInfo() {
                 </p>
             </div>
             <div className="col-span-5 md:col-span-2 flex flex-row items-center">
-                <img src={image1} className="w-45 h-70 border border-gray-300 rounded-xl object-cover object-center" alt="Image 1" />
+                <img src={image1} className="w-45 !h-70 border border-gray-300 rounded-xl object-cover object-center" alt="Image 1" />
                 <div className="hidden lg:block ms-10 ">
-                    <img src={image2} className="w-45 h-70 border border-gray-300 rounded-xl mb-5  object-cover object-center" alt="Image 2" />
-                    <img src={image3} className="w-45 h-70 border border-gray-300 rounded-xl  object-cover object-center" alt="Image 3" /></div>
+                    <img src={image2} className="w-45 !h-70 border border-gray-300 rounded-xl mb-5  object-cover object-center" alt="Image 2" />
+                    <img src={image3} className="w-45 !h-70 border border-gray-300 rounded-xl  object-cover object-center" alt="Image 3" /></div>
             </div>
         </div>
     );

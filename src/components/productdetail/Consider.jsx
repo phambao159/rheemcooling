@@ -81,11 +81,14 @@ function Consider({ data, review }) {
                                     )}
                                 </div>
 
-                                <img
-                                    src={`https://storage.googleapis.com/rheemcooling/${product.brand}/${product.ac_id}/${product.ac_id}_img1.webp`}
-                                    alt={product.name}
-                                    className="w-full h-50 md:h-30 my-5 md:mb-0 object-contain"
-                                />
+                                <div className="w-full h-[180px] md:h-[150px] flex justify-center items-center">
+                                    <img
+                                        src={`https://storage.googleapis.com/rheemcooling/${product.brand}/${product.ac_id}/${product.ac_id}_img1.webp`}
+                                        alt={product.name}
+                                        className="max-h-full object-contain"
+                                    />
+                                </div>
+
 
                                 <Link
                                     to={`/product/${product.ac_id}`}
