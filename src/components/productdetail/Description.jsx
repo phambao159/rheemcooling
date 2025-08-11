@@ -109,7 +109,7 @@ function Description({ data, review }) {
                     <p className="text-sm text-gray-600">
                         Items are covered under{" "}
                         <a
-                            href="#"
+                            href=""
                             className="text-[#DC143C] font-semibold underline"
                         >
                             Rheem Cooling Promise

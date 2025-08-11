@@ -1,4 +1,4 @@
-import windowAC_vuong from "../../images/home/windowAC_vuong.jpg";
+
 import { Link } from "react-router-dom";
 
 const TopDeals = ({ db }) => {
@@ -63,21 +63,18 @@ const TopDeals = ({ db }) => {
               const discount =
                 item.old_price && item.old_price > item.price
                   ? Math.round(
-                      ((item.old_price - item.price) / item.old_price) * 100
-                    )
+                    ((item.old_price - item.price) / item.old_price) * 100
+                  )
                   : 0;
-              const imageUrl = `https://storage.googleapis.com/rheemcooling/${
-                productData.brand
-              }/${item.ac_id}/${item.ac_id}_img${
-                item.bestImageIndex || 1
-              }.webp`;
+              const imageUrl = `https://storage.googleapis.com/rheemcooling/${productData.brand
+                }/${item.ac_id}/${item.ac_id}_img${item.bestImageIndex || 1
+                }.webp`;
 
               return (
                 <div
                   key={index}
-                  className={`relative bg-gray-50 text-black rounded-md shadow p-1 sm:p-2 md:p-3 ${
-                    index < 2 ? "lg:col-span-2" : ""
-                  }`}
+                  className={`relative bg-gray-50 text-black rounded-md shadow p-1 sm:p-2 md:p-3 ${index < 2 ? "lg:col-span-2" : ""
+                    }`}
                 >
                   {/* Label */}
                   {item.isNew && (

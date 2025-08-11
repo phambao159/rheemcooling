@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export default function ContactForm() {
-    const navigate = useNavigate();
     const [formData, setFormdata] = useState({
         fname: "",
         lname: "",

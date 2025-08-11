@@ -1,12 +1,10 @@
-import React from "react";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import { Link } from "react-router-dom";
 
 import banner_2 from "../../images/home/banner_2.jpg";
-import windowAC_vuong from "../../images/home/windowAC_vuong.jpg";
 import ProductCard from "../ProductCard";
 import SaveButton from "../SaveButton";
 
@@ -96,7 +94,7 @@ const TrendingProducts = ({ db }) => {
             autoplay={{ delay: 3000 }}
             className="mb-6"
             breakpoints={{
-              320: { slidesPerView: 2, spaceBetween: 12 },
+              320: { slidesPerView: 1, spaceBetween: 12 },
               768: { slidesPerView: 1 },
               1024: { slidesPerView: 4, spaceBetween: 20 },
             }}

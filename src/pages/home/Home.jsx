@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import products from "../../data/product.json";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 import TopDeals from "../../components/home/TopDeals";
 import YouViewed from "../../components/home/YouViewed";

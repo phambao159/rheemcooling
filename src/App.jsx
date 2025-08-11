@@ -29,7 +29,7 @@ function App() {
         <div className="container mx-auto px-4">
           <ScrollToTop />
           <Routes>
-            <Route path="/" element={<Home />}></Route> {/* RecentView */}
+            <Route path="/" element={<Home />}></Route>
             <Route path="/contact" element={<Contact />}></Route>
             <Route
               path="/customersupport"
@@ -52,14 +52,6 @@ function App() {
           </Routes>
         </div>
       </div>
-
-      <df-messenger
-        chat-icon="https://png.pngtree.com/png-vector/20230225/ourmid/pngtree-smart-chatbot-cartoon-clipart-png-image_6620453.png"
-        intent="WELCOME"
-        chat-title="AI_RheemCooling"
-        agent-id="2a60cb34-4f0f-4760-9520-c2a91ac713fb"
-        language-code="en"
-      ></df-messenger>
 
       <YourLocation />
       <Footer />

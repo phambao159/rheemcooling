@@ -5,7 +5,6 @@ import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 export default function YouViewed({ db, isOpenHistory, setIsOpenHistory }) {
@@ -37,7 +36,7 @@ export default function YouViewed({ db, isOpenHistory, setIsOpenHistory }) {
         {/* Custom Navigation Buttons */}
         <button
           id="custom-prev-recentview"
-          className="hidden md:block absolute z-10 top-1/2 left-0 -translate-y-1/2 cursor-pointer bg-white border border-gray-300 rounded-full p-2 shadow hover:bg-blue-100 transition"
+          className="hidden md:block absolute z-10 top-3/4 left-0 -translate-y-3/4 cursor-pointer bg-white border border-gray-300 rounded-full p-2 shadow hover:bg-blue-100 transition  "
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -57,7 +56,7 @@ export default function YouViewed({ db, isOpenHistory, setIsOpenHistory }) {
 
         <button
           id="custom-next-recentview"
-          className="hidden md:block absolute z-10 top-1/2 right-0 -translate-y-1/2 cursor-pointer bg-white border border-gray-300 rounded-full p-2 shadow hover:bg-blue-100 transition"
+          className="hidden md:block absolute z-10 top-3/4 right-0 -translate-y-3/4 cursor-pointer bg-white border border-gray-300 rounded-full p-2 shadow hover:bg-blue-100 transition "
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -91,9 +90,9 @@ export default function YouViewed({ db, isOpenHistory, setIsOpenHistory }) {
           loop={true}
           autoplay={{ delay: 3000 }}
           breakpoints={{
-            320: { slidesPerView: 2, spaceBetween: 12 },
-            640: { slidesPerView: 3, spaceBetween: 16 },
-            768: { slidesPerView: 4, spaceBetween: 20 },
+            320: { slidesPerView: 1, spaceBetween: 12 },
+            768: { slidesPerView: 2, spaceBetween: 16 },
+            1024: { slidesPerView: 4, spaceBetween: 20 },
           }}
         >
           {recent.map((product) => {

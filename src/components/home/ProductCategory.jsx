@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
-import windowAC_vuong from "../../images/home/windowAC_vuong.jpg";
 import ProductCard from "../ProductCard";
 
 const ProductCategory = ({ db }) => {
@@ -67,9 +65,10 @@ const ProductCategory = ({ db }) => {
       {/* Xem thêm sản phẩm */}
       <div className="text-center font-bold text-blue-600 text-sm sm:text-base">
         <Link to="/topsellingAC">
-          <a href="blank">View more products {">>"} </a>
+          View more products {">>"}
         </Link>
       </div>
+
     </section>
   );
 };

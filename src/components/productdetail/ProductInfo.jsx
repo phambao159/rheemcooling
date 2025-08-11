@@ -13,8 +13,6 @@ function ProductInfo({ data, image }) {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
 
-    const product = data[0];
-
     const attributes = [
         { label: "Name", value: data.name },
         { label: "Brand", value: data.brand },
