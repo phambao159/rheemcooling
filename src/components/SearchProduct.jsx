@@ -14,7 +14,7 @@ function SearchProduct() {
 
     return (
         <div className="searchproduct">
-            <div className="hidden lg:block w-[200px] ms-5">
+            <div className=" w-full md:w-[200px] ms-0 md:ms-5">
                 <input
                     type="text"
                     placeholder="Search..."

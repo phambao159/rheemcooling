@@ -41,7 +41,10 @@ function Header() {
             </div>
 
             {/* Search (ẩn trên sm) */}
-            <SearchProduct />
+            <div className="hidden md:block">
+              <SearchProduct />
+            </div>
+
 
             {/* Desktop Menu */}
             <div className="hidden lg:flex items-center gap-x-10">
@@ -124,11 +127,7 @@ function Header() {
           {/* Mobile Menu Content */}
           {isOpen && (
             <div className="lg:hidden px-4 py-4 space-y-3 bg-gray-50 border-t">
-              <input
-                type="text"
-                placeholder="Search..."
-                className="w-full px-4 py-2 text-sm border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
+              <SearchProduct />
               <Link
                 to="/topsellingAC"
                 className="block text-sm font-medium text-gray-700"
