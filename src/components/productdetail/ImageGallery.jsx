@@ -48,7 +48,7 @@ function ImageGallery({ data }) {
                 thumbs={{ swiper: thumbsSwiper }}
                 watchSlidesProgress={true}
                 modules={[Navigation, Thumbs]}
-                className="mainSwiper w-full h-[300px] md:h-[500px] col-span-8 md:col-span-8 rounded-lg overflow-hidden"
+                className="mainSwiper w-full h-[300px] md:h-[500px] col-span-8 col-start-2 md:col-start-auto md:col-span-8 rounded-lg overflow-hidden"
             >
                 {data.map((item) => (
                     <SwiperSlide key={item.id}>
