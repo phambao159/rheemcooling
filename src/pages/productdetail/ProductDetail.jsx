@@ -44,23 +44,23 @@ function ProductDetail({ product, review }) {
 
     return (
         <div className="productdetail my-10">
-            <div className="grid grid-cols-5">
-                <div className="col-span-5 md:col-span-3">
+            <div className="grid grid-cols-1 md:grid-cols-5">
+                <div className="col-span-1 md:col-span-3">
                     <ImageGallery data={image} />
                 </div>
-                <div className="col-span-5 md:col-span-2">
+                <div className="col-span-1 md:col-span-2">
                     <Description data={data} review={reviewProduct} />
                 </div>
-                <div className="col-span-5 md:col-span-3 mb-5 md:mb-0">
+                <div className="col-span-1 md:col-span-3 mb-5 md:mb-0">
                     <ProductInfo data={data} image={image} />
                 </div>
-                <div className="col-span-5">
+                <div className="col-span-1 md:col-span-5">
                     <Review data={reviewProduct} />
                 </div>
-                <div className="col-span-5">
+                <div className="col-span-1 md:col-span-5">
                     <RecentView />
                 </div>
-                <div className="col-span-5">
+                <div className="col-span-1 md:col-span-5">
                     <Consider data={considerProduct} review={reviewConsider} />
                 </div>
             </div>
