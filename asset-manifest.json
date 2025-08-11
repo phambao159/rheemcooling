@@ -1,24 +1,23 @@
 {
   "files": {
     "main.css": "/rheemcooling/static/css/main.dfce279b.css",
-    "main.js": "/rheemcooling/static/js/main.57bac36c.js",
+    "main.js": "/rheemcooling/static/js/main.1b1529d0.js",
     "static/js/453.819bd979.chunk.js": "/rheemcooling/static/js/453.819bd979.chunk.js",
     "static/media/banner_2.jpg": "/rheemcooling/static/media/banner_2.2b7e043805ee44e8cba9.jpg",
     "static/media/mission.jpg": "/rheemcooling/static/media/mission.ed7918eacd35320e7bab.jpg",
     "static/media/banner_1.jpg": "/rheemcooling/static/media/banner_1.5ae0a9fce40ebd71ebb4.jpg",
     "static/media/image2.jpg": "/rheemcooling/static/media/image2.666d0c40e6c35a609cbd.jpg",
     "static/media/headbanner.png": "/rheemcooling/static/media/headbanner.a0b4d2e073a7a92fbd9e.png",
-    "static/media/windowAC_vuong.jpg": "/rheemcooling/static/media/windowAC_vuong.0326e7935ed9651c5844.jpg",
     "static/media/image1.jpg": "/rheemcooling/static/media/image1.2e63e37a2b0a0914c366.jpg",
     "static/media/logo.png": "/rheemcooling/static/media/logo.c14ccd893aaac2fe5de3.png",
     "static/media/image3.jpg": "/rheemcooling/static/media/image3.0737e76b8fa7cbaec183.jpg",
     "index.html": "/rheemcooling/index.html",
     "main.dfce279b.css.map": "/rheemcooling/static/css/main.dfce279b.css.map",
-    "main.57bac36c.js.map": "/rheemcooling/static/js/main.57bac36c.js.map",
+    "main.1b1529d0.js.map": "/rheemcooling/static/js/main.1b1529d0.js.map",
     "453.819bd979.chunk.js.map": "/rheemcooling/static/js/453.819bd979.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.dfce279b.css",
-    "static/js/main.57bac36c.js"
+    "static/js/main.1b1529d0.js"
   ]
 }
