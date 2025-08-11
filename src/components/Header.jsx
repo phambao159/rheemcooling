@@ -2,7 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import logo from "../images/header/logo.png";
-import headbanner from "../images/header/headbanner.jpg";
+import headbanner from "../images/header/headbanner.png";
+import SearchProduct from "./SearchProduct";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,13 +41,7 @@ function Header() {
             </div>
 
             {/* Search (ẩn trên sm) */}
-            <div className="hidden lg:block w-[200px] ms-5">
-              <input
-                type="text"
-                placeholder="Search..."
-                className="w-full px-4 py-2 text-sm border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
+            <SearchProduct />
 
             {/* Desktop Menu */}
             <div className="hidden lg:flex items-center gap-x-10">

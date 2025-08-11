@@ -9,9 +9,9 @@ import VisitorCount from "./components/VisitorCount";
 import ProductDetail from "./pages/productdetail/ProductDetail";
 import product from "../src/data/product.json";
 import review from "../src/data/review.json";
-import RecentView from "./components/RecentView";
 import SavedProduct from "./pages/savedproduct/SavedProduct";
 import ScrollToTop from "./components/ScrollToTop";
+import SearchPage from "./pages/SearchPage";
 
 import Home from "./pages/home/Home";
 import Product from "./pages/product/Product";
@@ -33,6 +33,7 @@ function App() {
               element={<CustomerSupport />}
             ></Route>
             <Route path="/aboutus" element={<AboutUs />}></Route>
+            <Route path="/search" element={<SearchPage />} />
             <Route path="/topsellingAC" element={<Product />}></Route>
             <Route path="/windowAC" element={<div>Window AC</div>}></Route>
             <Route path="/splitAC" element={<div>Split AC</div>}></Route>
@@ -48,6 +49,17 @@ function App() {
           </Routes>
         </div>
       </div>
+
+
+      <df-messenger
+        chat-icon="https://png.pngtree.com/png-vector/20230225/ourmid/pngtree-smart-chatbot-cartoon-clipart-png-image_6620453.png"
+        intent="WELCOME"
+        chat-title="AI_RheemCooling"
+        agent-id="2a60cb34-4f0f-4760-9520-c2a91ac713fb"
+        language-code="en"
+      ></df-messenger>
+
+
       <YourLocation />
       <Footer />
     </>

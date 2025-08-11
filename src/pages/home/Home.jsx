@@ -21,8 +21,8 @@ export default function Home() {
     <>
       {/* 1. Special Offer */}
       {isOpenSpecialOffer && (
-        <div className="flex flex-col sm:flex-row justify-center items-center bg-yellow-500 text-black text-lg sm:text-xl md:text-2xl px-4 sm:px-6 py-4 text-center relative animate-pulse">
-          🎉 Ưu đãi đặc biệt: Giảm giá sốc trong 24h! 🎉
+        <div className="flex flex-col sm:flex-row justify-center items-center bg-yellow-400 text-black text-lg sm:text-xl md:text-2xl px-4 py-4 text-center relative animate-pulse">
+          🎉 Special Offer: Flash Sale for 24 Hours Only! 🎉
           <button
             className="absolute right-3 sm:right-4 top-1 text-white text-2xl leading-none"
             onClick={() => setIsOpenSpecialOffer(false)}

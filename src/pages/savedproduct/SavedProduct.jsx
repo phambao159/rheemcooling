@@ -1,4 +1,4 @@
-// components/RecentView.jsx
+// components/SavedProduct.jsx
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { X } from "lucide-react";

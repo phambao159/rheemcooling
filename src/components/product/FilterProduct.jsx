@@ -58,7 +58,7 @@ export default function FilterProduct({ db, onFilter }) {
     <div className="p-4 bg-white border rounded-lg space-y-6 h-auto md:h-full max-h-none md:max-h-screen overflow-x-auto md:overflow-y-auto">
       {/* Category */}
       <div>
-        <h3 className="text-[#dc143c] font-semibold mb-2">Category</h3>
+        <h3 className="text-[#DC143C] font-semibold mb-2">Category</h3>
         {categorieList.map((c) => (
           <label
             key={c}
@@ -86,7 +86,7 @@ export default function FilterProduct({ db, onFilter }) {
 
       {/* Brand */}
       <div>
-        <h3 className="text-[#dc143c] font-semibold mb-2">Brand</h3>
+        <h3 className="text-[#DC143C] font-semibold mb-2">Brand</h3>
         {brandList.map((b) => (
           <label
             key={b}
@@ -114,30 +114,7 @@ export default function FilterProduct({ db, onFilter }) {
 
       {/* Price Range */}
       <div>
-        <h3 className="text-[#dc143c] font-semibold mb-2">Price</h3>
-        <div className="flex flex-col lg:flex-row items-center gap-2 mb-2">
-          <input
-            type="number"
-            placeholder="Min"
-            className="border p-1 w-full lg:w-[30%] sm:flex-1"
-            value={minPrice}
-            onChange={(e) => setMinPrice(e.target.value)}
-          />
-          {/* <span className="my-2 md:mx-1">to</span> */}
-          <input
-            type="number"
-            placeholder="Max"
-            className="border p-1 w-full lg:w-[30%] sm:flex-1"
-            value={maxPrice}
-            onChange={(e) => setMaxPrice(e.target.value)}
-          />
-          <button
-            className="px-3 py-1 bg-[#dc143c] text-white rounded hover:bg-red-700 whitespace-nowrap w-full lg:w-[30%]"
-            onClick={handleSetPrice}
-          >
-            Set
-          </button>
-        </div>
+        <h3 className="text-[#DC143C] font-semibold mb-2">Price</h3>
 
         {[
           { label: "Under $75", min: 0, max: 75 },
@@ -171,7 +148,7 @@ export default function FilterProduct({ db, onFilter }) {
 
       {/* Power */}
       <div>
-        <h3 className="text-[#dc143c] font-semibold mb-2">Power</h3>
+        <h3 className="text-[#DC143C] font-semibold mb-2">Power</h3>
         {["1HP", "1.5HP", "2HP", "2.5HP"].map((p) => (
           <label
             key={p}
@@ -197,57 +174,7 @@ export default function FilterProduct({ db, onFilter }) {
         ))}
       </div>
 
-      {/* Size */}
-      {/* <div>
-        <h3 className="text-[#dc143c] font-semibold mb-2">Size</h3>
-        {["Small", "Medium", "Large"].map((s) => (
-          <label key={s} className="block">
-            <input
-              type="checkbox"
-              className="mr-2"
-              onChange={(e) =>
-                setFilterOption((prev) => {
-                  const current = prev.size;
-                  return {
-                    ...prev,
-                    size: e.target.checked
-                      ? [...current, s]
-                      : current.filter((sz) => sz !== s),
-                  };
-                })
-              }
-            />
-            {s}
-          </label>
-        ))}
-      </div> */}
 
-      {/* Features */}
-      {/* <div>
-        <h3 className="text-[#dc143c] font-semibold mb-2">Features</h3>
-        {["Inverter", "Fast Cooling", "Energy Saving", "Dehumidifier"].map(
-          (f) => (
-            <label key={f} className="block">
-              <input
-                type="checkbox"
-                className="mr-2"
-                onChange={(e) =>
-                  setFilterOption((prev) => {
-                    const current = prev.features;
-                    return {
-                      ...prev,
-                      features: e.target.checked
-                        ? [...current, f]
-                        : current.filter((ft) => ft !== f),
-                    };
-                  })
-                }
-              />
-              {f}
-            </label>
-          )
-        )}
-      </div> */}
     </div>
   );
 }

@@ -11,7 +11,7 @@ const ProductCard = ({
     <div className="">
       {/* Label */}
       {product.isNew && (
-        <span className="absolute top-2 left-2 bg-red-500 text-white text-[10px] sm:text-xs font-bold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded">
+        <span className="absolute top-2 left-2 bg-[#DC143C] text-white text-[10px] sm:text-xs font-bold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded">
           New
         </span>
       )}
@@ -39,7 +39,7 @@ const ProductCard = ({
           {product.name}
         </Link>
         <div className="flex items-baseline gap-2 sm:gap-3 mt-1 sm:mt-2 mb-1">
-          <p className="text-[#dc143c] font-bold text-sm sm:text-lg md:text-lg">
+          <p className="text-[#DC143C] font-bold text-sm sm:text-lg md:text-lg">
             $ {product.price}
           </p>
           <p className="text-gray-400 line-through text-xs sm:text-sm">

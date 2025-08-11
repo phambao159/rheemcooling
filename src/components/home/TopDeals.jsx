@@ -29,14 +29,14 @@ const TopDeals = ({ db }) => {
     >
       <div className="grid grid-cols-10 gap-4 md:gap-6">
         <div className="col-span-10 md:col-span-3 flex flex-col items-start justify-center">
-          <h2 className="text-4xl md:text-6xl text-[#dc143c] mb-2">
+          <h2 className="text-4xl md:text-6xl text-[#DC143C] mb-2">
             TOP <div className="font-bold ">DEALS</div>
           </h2>
-          <p className="text-lg sm:text-xl md:text-2xl text-[#dc143c] mb-4">
+          <p className="text-lg sm:text-xl md:text-2xl text-[#DC143C] mb-4">
             Don't miss it
           </p>
           <Link to="/topsellingAC">
-            <button className="bg-[#dc143c] font-semibold text-white text-base sm:text-lg md:text-xl px-3 sm:px-4 py-2 rounded-lg hover:bg-red-700 transition">
+            <button className="bg-[#DC143C] font-semibold text-white text-base sm:text-lg md:text-xl px-3 sm:px-4 py-2 rounded-lg hover:bg-blue-700 transition">
               Shop now
             </button>
           </Link>
@@ -72,7 +72,7 @@ const TopDeals = ({ db }) => {
 
                   <div className="flex justify-center mt-2 md:mt-3 lg:mt-4">
                     <Link to={`/product/${item.ac_id}`}>
-                      <button className="w-full bg-[#dc143c] font-semibold text-white text-sm sm:text-base px-2 py-1 rounded-md hover:bg-red-700 transition mb-2">
+                      <button className="w-full bg-[#DC143C] font-semibold text-white text-sm sm:text-base px-2 py-1 rounded-md hover:bg-blue-700 transition mb-2">
                         Shop now
                       </button>
                     </Link>

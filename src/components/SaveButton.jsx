@@ -48,7 +48,7 @@ function SaveButton({ product, width, isHeart = false }) {
                 </button>
             ) : (
                 <button
-                    className={`${width} bg-[#DC143C] hover:bg-red-700 transition font-bold px-8 rounded-lg text-white flex items-center border-2 border-[#DC143C] justify-center mb-4 hover:cursor-pointer whitespace-nowrap`}
+                    className={`${width} bg-[#DC143C] hover:bg-blue-700 transition font-bold px-8 rounded-lg text-white flex items-center border-2 border-[#DC143C] justify-center mb-4 hover:cursor-pointer whitespace-nowrap`}
                     onClick={handleSave}
                 >
                     {isHeart ? <HeartIcon className="mx-1 w-5 h-5 text-white" /> : ""}

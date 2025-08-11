@@ -36,8 +36,8 @@ function Faqs() {
                             setActiveIndex(null); // Reset accordion
                         }}
                         className={`px-4 py-2 rounded-full border text-sm font-medium transition ${selectedCategory === category
-                                ? "bg-[#DC143C] text-white border-[#DC143C]"
-                                : "bg-white text-gray-700 border-gray-300 hover:bg-gray-100"
+                            ? "bg-[#DC143C] text-white border-[#DC143C]"
+                            : "bg-white text-gray-700 border-gray-300 hover:bg-gray-100"
                             }`}
                     >
                         {category}

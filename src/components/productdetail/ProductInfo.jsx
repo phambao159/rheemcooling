@@ -38,7 +38,7 @@ function ProductInfo({ data, image }) {
                     key={attr.label}
                     className={`grid grid-cols-3 md:grid-cols-4 gap-4 items-start px-4 py-3 
                         ${index % 2 === 0 ? "bg-gray-50" : "bg-white"} 
-                        hover:bg-red-50 transition`}
+                        hover:bg-blue-50 transition`}
                 >
                     <div className="font-bold text-black col-span-1">{attr.label}</div>
                     <div className="col-span-2 md:col-span-3 text-gray-900">{attr.value}</div>
