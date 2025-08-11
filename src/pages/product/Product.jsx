@@ -22,11 +22,11 @@ export default function Product() {
   return (
     <div className="container mx-auto">
       <div className="grid grid-cols-10 gap-4">
-        <section className="col-span-2 my-5">
+        <section className="col-span-3 lg:col-span-2 my-5">
           <FilterProduct db={Products} onFilter={handleFilter} />
         </section>
 
-        <section className="col-span-8 my-5 p-6 bg-white border rounded-lg">
+        <section className="col-span-7 lg:col-span-8 my-5 p-6 bg-white border rounded-lg">
           <div>
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-5">
               AIR CONDITIONER{" "}

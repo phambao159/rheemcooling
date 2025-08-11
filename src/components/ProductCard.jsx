@@ -35,18 +35,18 @@ const ProductCard = ({
 
       {/* Product Info */}
       <div className="flex flex-col flex-grow ">
-        <Link to={`/product/${product.ac_id}`} className="text-gray-800 font-bold line-clamp-3 mt-5 hover:underline min-h-[3.6em] leading-[1.2rem]">
+        <Link to={`/product/${product.ac_id}`} className="text-gray-800 font-bold line-clamp-3 mt-5 hover:underline min-h-[3.6em] leading-[1.2rem] ">
           {product.name}
         </Link>
         <div className="flex items-baseline gap-2 sm:gap-3 mt-1 sm:mt-2 mb-1">
-          <p className="text-[#dc143c] font-bold text-sm sm:text-lg md:text-xl">
+          <p className="text-[#dc143c] font-bold text-sm sm:text-lg md:text-lg">
             $ {product.price}
           </p>
-          <p className="text-gray-400 line-through text-[10px] sm:text-sm">
+          <p className="text-gray-400 line-through text-xs sm:text-sm">
             $ {product.old_price}
           </p>
         </div>
-        <p className="text-yellow-400 text-[10px] sm:text-sm mb-1">
+        <p className="text-yellow-400 text-xs sm:text-sm mb-1">
           ★
           <span className="text-gray-600">
             {" "}
@@ -54,7 +54,7 @@ const ProductCard = ({
           </span>
         </p>
       </div>
-    </div>
+    </div >
   );
 };
 

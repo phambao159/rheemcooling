@@ -8,6 +8,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Link } from 'react-router-dom';
 import SaveButton from '../../components/SaveButton'; // 
+import "../../css/style.css";
 
 function Consider({ data, review }) {
     return (

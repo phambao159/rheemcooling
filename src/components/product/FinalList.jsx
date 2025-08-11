@@ -10,7 +10,7 @@ import SaveButton from "../SaveButton";
 
 const FinalList = ({ db, visibleCount }) => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
       {db.slice(0, visibleCount).map((product) => {
         const imageUrl = `https://storage.googleapis.com/rheemcooling/${product.brand}/${product.ac_id}/${product.ac_id}_img1.webp`;
         return (
@@ -21,7 +21,7 @@ const FinalList = ({ db, visibleCount }) => {
             <ProductCard
               product={product}
               imageSrc={imageUrl}
-              wrapperClassName="flex justify-center items-center h-42 sm:h-54 md:h-60"
+              wrapperClassName="flex justify-center items-center h-42 sm:h-54 md:h-60 mt-5"
               imageClassName="max-w-9/10 max-h-full object-contain rounded-md mb-3 sm:mb-4" // custom className tùy ý
             />
 

@@ -11,9 +11,9 @@ const ProductCategory = ({ db }) => {
     activeTab === "Topselling"
       ? [...db].sort((a, b) => b.sale_quantity - a.sale_quantity).slice(0, 12)
       : db
-          .filter((product) => product.type === activeTab)
-          .slice(0, 12)
-          .sort(() => 0.5 - Math.random());
+        .filter((product) => product.type === activeTab)
+        .slice(0, 12)
+        .sort(() => 0.5 - Math.random());
 
   return (
     <section className="my-2 px-4 sm:px-6 py-6 sm:py-10 bg-white border rounded-lg w-full box-border">
@@ -33,11 +33,10 @@ const ProductCategory = ({ db }) => {
             <button
               key={tab.value}
               onClick={() => setActiveTab(tab.value)}
-              className={`px-3 sm:px-4 py-2 border rounded text-xs sm:text-sm font-semibold whitespace-nowrap transition ${
-                activeTab === tab.value
-                  ? "bg-pink-500 text-white border-pink-500"
-                  : "text-black hover:border-pink-300"
-              }`}
+              className={`px-3 sm:px-4 py-2 border rounded text-xs sm:text-sm font-semibold whitespace-nowrap transition ${activeTab === tab.value
+                ? "bg-[#DC143C] text-white border-[#DC143C]"
+                : "text-black hover:border-red-700"
+                }`}
             >
               {tab.label}
             </button>

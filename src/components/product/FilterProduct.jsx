@@ -57,7 +57,7 @@ export default function FilterProduct({ db, onFilter }) {
   }, [filteredProducts]);
 
   return (
-    <div className="p-4 bg-white border rounded-lg space-y-6 h-auto md:h-full max-h-none md:max-h-screen md:overflow-y-auto">
+    <div className="p-4 bg-white border rounded-lg space-y-6 h-auto md:h-full max-h-none md:max-h-screen overflow-x-auto md:overflow-y-auto">
       {/* Category */}
       <div>
         <h3 className="text-[#dc143c] font-semibold mb-2">Category</h3>

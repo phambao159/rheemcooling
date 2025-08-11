@@ -30,7 +30,7 @@ const TrendingProducts = ({ db }) => {
 
       <div className="flex flex-col md:flex-row gap-4">
         {/* Banner */}
-        <div className="w-full md:w-[30%]">
+        <div className="w-full md:w-[60%] lg:w-[30%]">
           <img
             src={banner_2}
             alt="Banner"
@@ -39,7 +39,7 @@ const TrendingProducts = ({ db }) => {
         </div>
 
         {/* Product List */}
-        <div className="w-full md:w-[70%]">
+        <div className="w-full md:w-[40%] lg:w-[70%] ">
           {/* <div
             className="swiper-button-prev absolute top-1/2 -translate-y-1/2 -left-4 z-10 
                   !w-8 !h-8 !rounded-full !bg-white !shadow-md 
@@ -65,13 +65,12 @@ const TrendingProducts = ({ db }) => {
             // }}
             // spaceBetween={20}
             // slidesPerView={4}
-            loop={true}
             autoplay={{ delay: 3000 }}
             className="mb-6"
             breakpoints={{
               320: { slidesPerView: 2, spaceBetween: 12 },
-              640: { slidesPerView: 3, spaceBetween: 16 },
-              768: { slidesPerView: 4, spaceBetween: 20 },
+              768: { slidesPerView: 1 },
+              1024: { slidesPerView: 4, spaceBetween: 20 },
             }}
           >
             {shuffleArray(db).map((product) => {

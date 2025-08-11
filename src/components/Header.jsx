@@ -15,7 +15,7 @@ function Header() {
 
       <div className="container mx-auto">
         <header className="bg-white">
-          <nav className="relative mx-auto flex max-w-7xl items-center justify-between px-4 lg:px-8 py-3">
+          <nav className="relative mx-auto flex items-center justify-between px-4 lg:px-8 py-3">
             {/* Logo */}
             <Link
               to="/"
@@ -61,7 +61,7 @@ function Header() {
                     <path d="M5.22 8.22a.75.75 0 011.06 0L10 11.94l3.72-3.72a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.22 9.28a.75.75 0 010-1.06z" />
                   </svg>
                 </button>
-                <div className="absolute left-0 top-full mt-2 w-72 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200 z-50">
+                <div className="absolute left-0 top-full  w-72 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200 z-50">
                   <div className="p-4 space-y-4">
                     <Link to="/topsellingAC" className="block">
                       <span className="text-sm text-gray-900 font-medium">
@@ -172,13 +172,13 @@ function Header() {
               </Link>
               <Link
                 to="/customersupport"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-gray-700 pb-4"
               >
                 Customer Support
               </Link>
               <Link
                 to="/savedproduct"
-                className="text-sm font-semibold text-white bg-[#DC143C] rounded-sm px-3 py-2"
+                className="text-sm font-semibold text-white bg-[#DC143C] rounded px-3 py-2 "
               >
                 Saved Product
               </Link>
@@ -192,44 +192,45 @@ function Header() {
         <div className="flex container mx-auto h-full items-center ps-30">
           <ul className="flex space-x-4 justify-between">
             <li>
-              <a
-                href="#"
+              <Link
+                to="/"
                 className="text-sm text-white hover:underline font-semibold"
               >
                 hot deals
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#"
+              <Link
+                to="/windowAC"
                 className="text-sm text-white hover:underline font-semibold"
               >
                 window AC
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#"
+              <Link
+                to="/"
                 className="text-sm text-white hover:underline font-semibold"
               >
-                portable air conditioner
-              </a>
+                super sale
+              </Link>
             </li>
+
             <li>
-              <a
-                href="#"
+              <Link
+                to="/"
                 className="text-sm text-white hover:underline font-semibold"
               >
-                cheap air conditioner
-              </a>
+                air conditioner
+              </Link>
             </li>
             <li>
-              <a
-                href="#"
+              <Link
+                to="/topsellingAC"
                 className="text-sm text-white hover:underline font-semibold"
               >
                 hot selling
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

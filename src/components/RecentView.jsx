@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import SaveButton from '../components/SaveButton'; // 
+import "../css/style.css";
 
 function RecentView() {
     const [recent, setRecent] = useState([]);
