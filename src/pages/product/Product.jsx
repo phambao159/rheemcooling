@@ -6,24 +6,34 @@ import Sort from "../../components/product/Sort";
 import FinalList from "../../components/product/FinalList";
 import PeopleAlsoViewed from "../../components/product/PeopleAlsoViewed";
 
+import useProductFilter from "../../components/customhooks/useProductFilter";
+
 export default function Product() {
   const [filteredList, setFilteredList] = useState([]);
-  const handleFilter = (p) => {
-    setFilteredList(p);
-  };
+  const [activeFilters, setActiveFilters] = useState({});
+  const [filterActions, setFilterActions] = useState({});
 
   const [finalList, setFinalList] = useState([]);
+  const [visibleCount, setVisibleCount] = useState(8);
+
+  const handleFilter = (filteredProducts, filterOption) => {
+    setFilteredList(filteredProducts);
+    setActiveFilters(filterOption);
+  };
+
   const handleSort = (p) => {
     setFinalList(p);
   };
-
-  const [visibleCount, setVisibleCount] = useState(8);
 
   return (
     <div className="container mx-auto">
       <div className="grid grid-cols-10 gap-4">
         <section className="col-span-2 my-5">
-          <FilterProduct db={Products} onFilter={handleFilter} />
+          <FilterProduct
+            db={Products}
+            onFilter={handleFilter}
+            onExposeActions={setFilterActions}
+          />
         </section>
 
         <section className="col-span-8 my-5 p-6 bg-white border rounded-lg">
@@ -32,7 +42,67 @@ export default function Product() {
               AIR CONDITIONER{" "}
               <span className="font-normal">({finalList.length})</span>
             </h2>
-            {/* thêm hàm IF nếu có filter thì hiển thị từng thẻ filter, có nút tắt trong mỗi thẻ và thẻ Clear All */}
+
+            {/* Tag Filters */}
+            <div className="mb-4 flex flex-wrap gap-2">
+              {Object.entries(activeFilters).flatMap(([key, val]) => {
+                if (Array.isArray(val) && val.length > 0) {
+                  if (key === "priceRange") {
+                    return val.map((item) => (
+                      <span
+                        key={item.label}
+                        className="bg-gray-200 px-2 py-1 rounded"
+                      >
+                        {item.label}{" "}
+                        <button
+                          className="ml-1 text-red-500"
+                          onClick={() => {
+                            filterActions.setFilterOption((prev) => ({
+                              ...prev,
+                              priceRange: prev.priceRange.filter(
+                                (x) => x.label !== item.label
+                              ),
+                            }));
+                          }}
+                        >
+                          ×
+                        </button>
+                      </span>
+                    ));
+                  }
+                  return val.map((item) => (
+                    <span key={item} className="bg-gray-200 px-2 py-1 rounded">
+                      {item}
+                      <button
+                        className="ml-1 text-red-500"
+                        onClick={() => {
+                          filterActions.setFilterOption((prev) => ({
+                            ...prev,
+                            [key]: prev[key].filter((v) => v !== item),
+                          }));
+                        }}
+                      >
+                        ×
+                      </button>
+                    </span>
+                  ));
+                }
+                return [];
+              })}
+
+              {/* Clear All chip cuối */}
+              {Object.values(activeFilters).some(
+                (val) => Array.isArray(val) && val.length > 0
+              ) && (
+                <span
+                  onClick={() => filterActions.clearAllFilters()}
+                  className="bg-red-100 text-red-600 px-2 py-1 rounded cursor-pointer"
+                >
+                  Clear All
+                </span>
+              )}
+            </div>
+
             <hr />
           </div>
 

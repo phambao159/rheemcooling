@@ -22,31 +22,26 @@ function App() {
       <Header />
       <VisitorCount />
 
-      <div className="bg-gray-50">
-        <div className="container mx-auto px-4">
-          <ScrollToTop />
-          <Routes>
-            <Route path="/" element={<Home />}></Route> {/* RecentView */}
-            <Route path="/contact" element={<Contact />}></Route>
-            <Route
-              path="/customersupport"
-              element={<CustomerSupport />}
-            ></Route>
-            <Route path="/aboutus" element={<AboutUs />}></Route>
-            <Route path="/topsellingAC" element={<Product />}></Route>
-            <Route path="/windowAC" element={<div>Window AC</div>}></Route>
-            <Route path="/splitAC" element={<div>Split AC</div>}></Route>
-            <Route path="/cassetteAC" element={<div>Cassette AC</div>}></Route>
-            <Route
-              path="/savedproduct"
-              element={<SavedProduct review={review} />}
-            ></Route>
-            <Route
-              path="/product/:id"
-              element={<ProductDetail product={product} review={review} />}
-            ></Route>
-          </Routes>
-        </div>
+      <div className="container mx-auto px-4">
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<Home />}></Route> {/* RecentView */}
+          <Route path="/contact" element={<Contact />}></Route>
+          <Route path="/customersupport" element={<CustomerSupport />}></Route>
+          <Route path="/aboutus" element={<AboutUs />}></Route>
+          <Route path="/topsellingAC" element={<Product />}></Route>
+          <Route path="/windowAC" element={<div>Window AC</div>}></Route>
+          <Route path="/splitAC" element={<div>Split AC</div>}></Route>
+          <Route path="/cassetteAC" element={<div>Cassette AC</div>}></Route>
+          <Route
+            path="/savedproduct"
+            element={<SavedProduct review={review} />}
+          ></Route>
+          <Route
+            path="/product/:id"
+            element={<ProductDetail product={product} review={review} />}
+          ></Route>
+        </Routes>
       </div>
       <YourLocation />
       <Footer />

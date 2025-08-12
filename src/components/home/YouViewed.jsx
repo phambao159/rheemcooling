@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
@@ -10,6 +10,16 @@ import { Link } from "react-router-dom";
 import windowAC_vuong from "../../images/home/windowAC_vuong.jpg";
 
 export default function YouViewed({ db, isOpenHistory, setIsOpenHistory }) {
+  const [recent, setRecent] = useState([]);
+
+  // Load recently viewed products
+  useEffect(() => {
+    const stored = JSON.parse(localStorage.getItem("recently_viewed")) || [];
+    setRecent(stored);
+  }, []);
+
+  if (recent.length === 0) return null;
+
   return (
     <section className="bg-[#dc143c] my-2 px-4 sm:px-6 py-4 sm:py-6 rounded-lg">
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 mb-4">
@@ -38,7 +48,7 @@ export default function YouViewed({ db, isOpenHistory, setIsOpenHistory }) {
           768: { slidesPerView: 4, spaceBetween: 20 },
         }}
       >
-        {db.map((product) => (
+        {recent.map((product) => (
           <SwiperSlide key={product.ac_id}>
             <div className="flex gap-2 bg-white border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm hover:shadow-lg transition relative">
               <Link
