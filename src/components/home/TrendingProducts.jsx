@@ -39,30 +39,58 @@ const TrendingProducts = ({ db }) => {
         </div>
 
         {/* Product List */}
-        <div className="w-full md:w-[40%] lg:w-[70%] ">
-          {/* <div
-            className="swiper-button-prev absolute top-1/2 -translate-y-1/2 -left-4 z-10 
-                  !w-8 !h-8 !rounded-full !bg-white !shadow-md 
-                  !flex !items-center !justify-center !text-black hover:scale-110 transition"
+        <div className="relative w-full md:w-[40%] lg:w-[70%] ">
+          {/* Custom Navigation Buttons */}
+          <button
+            id="custom-prev-recentview"
+            className="hidden md:block absolute z-10 top-1/2 left-0 -translate-y-1/2 cursor-pointer bg-white border border-gray-300 rounded-full p-2 shadow hover:bg-blue-100 transition"
           >
-            <FaChevronLeft size={14} />
-          </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6 text-red-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
 
-          <div
-            className="swiper-button-next absolute top-1/2 -translate-y-1/2 -right-4 z-10 
-                  !w-8 !h-8 !rounded-full !bg-white !shadow-md 
-                  !flex !items-center !justify-center !text-black hover:scale-110 transition"
+          <button
+            id="custom-next-recentview"
+            className="hidden md:block absolute z-10 top-1/2 right-0 -translate-y-1/2 cursor-pointer bg-white border border-gray-300 rounded-full p-2 shadow hover:bg-blue-100 transition"
           >
-            <FaChevronRight size={14} />
-          </div> */}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6 text-red-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
 
           <Swiper
             modules={[Navigation]}
-            navigation
-            // navigation={{
-            //   nextEl: ".swiper-button-next",
-            //   prevEl: ".swiper-button-prev",
-            // }}
+            navigation={{
+              prevEl: "#custom-prev-recentview",
+              nextEl: "#custom-next-recentview",
+            }}
+            pagination={{
+              clickable: true,
+              el: ".custom-swiper-pagination-recentview",
+            }}
             // spaceBetween={20}
             // slidesPerView={4}
             autoplay={{ delay: 3000 }}
@@ -87,7 +115,10 @@ const TrendingProducts = ({ db }) => {
 
                     {/* Button */}
                     <div className="flex justify-center mt-5">
-                      <SaveButton product={product} width={"w-4/5 md:w-full py-2"} />
+                      <SaveButton
+                        product={product}
+                        width={"w-4/5 md:w-full py-2"}
+                      />
                     </div>
                   </div>
                 </SwiperSlide>

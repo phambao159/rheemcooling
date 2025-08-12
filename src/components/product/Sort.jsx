@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo, useRef } from "react";
 
 export default function Sort({ db, onSort }) {
   const [sortOption, setSortOption] = useState("Top Selling");
@@ -24,9 +24,19 @@ export default function Sort({ db, onSort }) {
     });
   }, [db, sortOption]);
 
+  const lastSentRef = useRef(null);
   useEffect(() => {
-    onSort(sortedProducts);
-  }, [sortedProducts]);
+    if (!onSort) return;
+    const serialized = JSON.stringify(sortedProducts);
+    if (lastSentRef.current !== serialized) {
+      onSort(sortedProducts);
+      lastSentRef.current = serialized;
+    }
+  }, [sortedProducts, onSort]);
+
+  // useEffect(() => {
+  //   onSort(sortedProducts);
+  // }, [sortedProducts]);
 
   return (
     <>

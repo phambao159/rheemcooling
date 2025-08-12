@@ -7,6 +7,13 @@ const ProductCard = ({
   wrapperClassName = "",
   imageClassName = "",
 }) => {
+  const discount =
+    product.old_price && product.old_price > product.price
+      ? Math.round(
+          ((product.old_price - product.price) / product.old_price) * 100
+        )
+      : 0;
+
   return (
     <div className="">
       {/* Label */}
@@ -15,14 +22,12 @@ const ProductCard = ({
           New
         </span>
       )}
-      <span className="absolute top-2 right-2 bg-yellow-400 text-[10px] sm:text-xs font-bold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded">
-        - 20%
-      </span>
-      {/* {product.discount > 0 && (
+
+      {discount > 0 && (
         <span className="absolute top-2 right-2 bg-yellow-400 text-xs font-bold px-2 py-1 rounded">
-          -{product.discount}%
+          -{discount}%
         </span>
-      )} */}
+      )}
 
       {/* Product Image */}
       <div className={wrapperClassName}>
@@ -35,7 +40,10 @@ const ProductCard = ({
 
       {/* Product Info */}
       <div className="flex flex-col flex-grow ">
-        <Link to={`/product/${product.ac_id}`} className="text-gray-800 font-bold line-clamp-3 mt-5 hover:underline min-h-[3.6em] leading-[1.2rem] ">
+        <Link
+          to={`/product/${product.ac_id}`}
+          className="text-gray-800 font-bold line-clamp-3 mt-5 hover:underline min-h-[3.6em] leading-[1.2rem] "
+        >
           {product.name}
         </Link>
         <div className="flex items-baseline gap-2 sm:gap-3 mt-1 sm:mt-2 mb-1">
@@ -54,7 +62,7 @@ const ProductCard = ({
           </span>
         </p>
       </div>
-    </div >
+    </div>
   );
 };
 

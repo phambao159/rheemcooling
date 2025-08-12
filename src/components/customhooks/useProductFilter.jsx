@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, useCallback, useRef } from "react";
 
 export default function useProductFilter(db, onFilter) {
   const [filterOption, setFilterOption] = useState({
@@ -26,25 +26,38 @@ export default function useProductFilter(db, onFilter) {
     });
   }, [db, filterOption]);
 
-  useEffect(() => {
-    if (onFilter) {
-      onFilter(filteredProducts, filterOption);
-    }
-  }, [filteredProducts, filterOption]);
-
-  const clearAllFilters = () => {
+  const clearAllFilters = useCallback(() => {
     setFilterOption({
       category: [],
       brand: [],
       priceRange: [],
       power: [],
     });
-  };
+  }, []);
+
+  // dùng ref để lưu lần onFilter đã gửi trước đó -> tránh gọi onFilter khi nội dung không đổi
+  const lastSentRef = useRef({ filtered: null, option: null });
+
+  useEffect(() => {
+    if (!onFilter) return;
+
+    const filteredStr = JSON.stringify(filteredProducts);
+    const optionStr = JSON.stringify(filterOption);
+
+    if (
+      lastSentRef.current.filtered !== filteredStr ||
+      lastSentRef.current.option !== optionStr
+    ) {
+      onFilter(filteredProducts, filterOption);
+      lastSentRef.current.filtered = filteredStr;
+      lastSentRef.current.option = optionStr;
+    }
+  }, [filteredProducts, filterOption, onFilter]);
 
   return {
-    filterOption,
+    filterOption, //object
+    filteredProducts, //array
     setFilterOption,
-    filteredProducts,
     clearAllFilters,
   };
 }

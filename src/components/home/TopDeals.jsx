@@ -2,15 +2,6 @@ import windowAC_vuong from "../../images/home/windowAC_vuong.jpg";
 import { Link } from "react-router-dom";
 
 const TopDeals = ({ db }) => {
-  // const topProducts = [
-  //   { ac_id: "mitsubishi_ac01", bestImageIndex: 1 },
-  //   { ac_id: "daikin_ac10", bestImageIndex: 2 },
-  //   { ac_id: "samsung_ac05", bestImageIndex: 1 },
-  //   { ac_id: "hitachi_ac10", bestImageIndex: 1 },
-  //   { ac_id: "panasonic_ac03", bestImageIndex: 2 },
-  //   { ac_id: "toshiba_ac01", bestImageIndex: 1 },
-  // ];
-
   const shuffleArray = (array) => {
     const shuffled = [...array];
     for (let i = shuffled.length - 1; i > 0; i--) {
@@ -19,6 +10,27 @@ const TopDeals = ({ db }) => {
     }
     return shuffled;
   };
+
+  const shopByCategoryIcons = [
+    {
+      label: "Window AC",
+      imageUrl:
+        "https://storage.googleapis.com/rheemcooling/samsung/samsung_ac01/samsung_ac01_img1.webp",
+      link: "/windowAC",
+    },
+    {
+      label: "Split AC",
+      imageUrl:
+        "https://storage.googleapis.com/rheemcooling/daikin/daikin_ac10/daikin_ac10_img1.webp",
+      link: "/splitAC",
+    },
+    {
+      label: "Cassette AC",
+      imageUrl:
+        "https://storage.googleapis.com/rheemcooling/toshiba/toshiba_ac06/toshiba_ac06_img1.webp",
+      link: "/cassetteAC",
+    },
+  ];
 
   return (
     <section
@@ -36,7 +48,7 @@ const TopDeals = ({ db }) => {
             Don't miss it
           </p>
           <Link to="/topsellingAC">
-            <button className="bg-[#DC143C] font-semibold text-white text-base sm:text-lg md:text-xl px-3 sm:px-4 py-2 rounded-lg hover:bg-blue-700 transition">
+            <button className="bg-[#DC143C] font-semibold text-white text-base sm:text-lg md:text-xl px-3 sm:px-4 py-2 rounded-lg shadow-lg hover:bg-blue-700 transition-transform duration-200 animate-pulse">
               Shop now
             </button>
           </Link>
@@ -48,15 +60,38 @@ const TopDeals = ({ db }) => {
             .slice(0, 6)
             .map((item, index) => {
               const productData = db.find((p) => p.ac_id === item.ac_id);
-              const imageUrl = `https://storage.googleapis.com/rheemcooling/${productData.brand
-                }/${item.ac_id}/${item.ac_id}_img${item.bestImageIndex || 1
-                }.webp`;
+              const discount =
+                item.old_price && item.old_price > item.price
+                  ? Math.round(
+                      ((item.old_price - item.price) / item.old_price) * 100
+                    )
+                  : 0;
+              const imageUrl = `https://storage.googleapis.com/rheemcooling/${
+                productData.brand
+              }/${item.ac_id}/${item.ac_id}_img${
+                item.bestImageIndex || 1
+              }.webp`;
+
               return (
                 <div
                   key={index}
-                  className={`bg-gray-50 text-black rounded-md shadow p-1 sm:p-2 md:p-3 ${index < 2 ? "lg:col-span-2" : ""
-                    }`}
+                  className={`relative bg-gray-50 text-black rounded-md shadow p-1 sm:p-2 md:p-3 ${
+                    index < 2 ? "lg:col-span-2" : ""
+                  }`}
                 >
+                  {/* Label */}
+                  {item.isNew && (
+                    <span className="absolute top-2 md:top-3 left-2 md:left-3 bg-[#DC143C] text-white text-[10px] sm:text-xs font-bold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded animate-bounce">
+                      New
+                    </span>
+                  )}
+
+                  {discount > 0 && (
+                    <span className="absolute top-2 md:top-3 right-2 md:right-3 bg-yellow-400 text-xs font-bold px-2 py-1 rounded animate-pulse">
+                      -{discount}%
+                    </span>
+                  )}
+
                   <div className="flex justify-center items-center mb-3 h-36 sm:h-40 md:h-44">
                     <img
                       src={imageUrl}
@@ -89,20 +124,20 @@ const TopDeals = ({ db }) => {
           </h3>
 
           <div className="flex justify-center items-center md:gap-4 md:overflow-x-auto scrollbar-hide">
-            {["Window AC", "Split AC", "Cassette AC"].map((cat, index) => (
-              <Link to="/topsellingAC" className="block">
+            {shopByCategoryIcons.map((p) => (
+              <Link to={p.link} className="block">
                 <div
-                  key={index}
+                  key={p.label}
                   className="flex-shrink-0 w-32 sm:w-40 text-center pb-4 md:pb-0"
                 >
                   <div className="flex justify-center items-center bg-white w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-2 border-2 border-black rounded-full overflow-hidden">
                     <img
-                      src={windowAC_vuong}
+                      src={p.imageUrl}
                       alt=""
                       className="w-4/5 h-4/5 object-contain"
                     />
                   </div>
-                  <p className="text-base sm:text-lg text-black">{cat}</p>
+                  <p className="text-base sm:text-lg text-black">{p.label}</p>
                 </div>
               </Link>
             ))}

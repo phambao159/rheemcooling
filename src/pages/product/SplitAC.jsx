@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useMemo, useCallback } from "react";
 import Products from "../../data/product.json";
 
 import FilterProduct from "../../components/product/FilterProduct";
 import Sort from "../../components/product/Sort";
 import FinalList from "../../components/product/FinalList";
 import RecentView from "../../components/RecentView";
-
-import useProductFilter from "../../components/customhooks/useProductFilter";
 
 export default function Product() {
   const [filteredList, setFilteredList] = useState([]);
@@ -16,30 +14,51 @@ export default function Product() {
   const [finalList, setFinalList] = useState([]);
   const [visibleCount, setVisibleCount] = useState(8);
 
-  const handleFilter = (filteredProducts, filterOption) => {
-    setFilteredList(filteredProducts);
-    setActiveFilters(filterOption);
-  };
+  const handleFilter = useCallback((newFilteredProducts, newFilterOption) => {
+    // chỉ cập nhật nếu nội dung thực sự khác (tránh setState vô ích)
+    setFilteredList((prev) => {
+      const prevStr = JSON.stringify(prev);
+      const nextStr = JSON.stringify(newFilteredProducts);
+      if (prevStr === nextStr) return prev;
+      return newFilteredProducts;
+    });
 
-  const handleSort = (p) => {
-    setFinalList(p);
-  };
+    setActiveFilters((prev) => {
+      const prevStr = JSON.stringify(prev);
+      const nextStr = JSON.stringify(newFilterOption);
+      if (prevStr === nextStr) return prev;
+      return newFilterOption;
+    });
+  }, []);
+
+  const handleSort = useCallback((p) => {
+    setFinalList((prev) => {
+      const prevStr = JSON.stringify(prev);
+      const nextStr = JSON.stringify(p);
+      if (prevStr === nextStr) return prev;
+      return p;
+    });
+  }, []);
+
+  // Khi filteredList thay đổi, truyền xuống Sort
+  const memoFilteredList = useMemo(() => filteredList, [filteredList]);
 
   return (
     <div className="container mx-auto">
       <div className="grid grid-cols-10 gap-4">
         <section className="col-span-3 lg:col-span-2 my-5">
           <FilterProduct
-            db={Products}
+            db={Products.filter((p) => p.type === "Split")}
             onFilter={handleFilter}
             onExposeActions={setFilterActions}
+            hideCategory={true}
           />
         </section>
 
         <section className="col-span-7 lg:col-span-8 my-5 p-6 bg-white border rounded-lg">
           <div>
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-5">
-              AIR CONDITIONER{" "}
+              SPLIT AIR CONDITIONER{" "}
               <span className="font-normal">({finalList.length})</span>
             </h2>
 
@@ -108,7 +127,7 @@ export default function Product() {
 
           {/* Sort By */}
           <div className="flex justify-end items-center gap-4 my-6">
-            <Sort db={filteredList} onSort={handleSort} />
+            <Sort db={memoFilteredList} onSort={handleSort} />
           </div>
 
           {/* List */}

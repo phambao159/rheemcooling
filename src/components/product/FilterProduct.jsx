@@ -1,7 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import useProductFilter from "../customhooks/useProductFilter";
 
-export default function FilterProduct({ db, onFilter, onExposeActions }) {
+export default function FilterProduct({
+  db,
+  onFilter,
+  onExposeActions,
+  hideCategory = false,
+}) {
   const categorieList = Array.from(new Set(db.map((p) => p.type)));
   const brandList = Array.from(new Set(db.map((p) => p.brand)));
   const priceOptions = [
@@ -20,9 +25,9 @@ export default function FilterProduct({ db, onFilter, onExposeActions }) {
   });
 
   const {
-    filterOption,
+    filterOption, //object
+    // filteredProducts, //array
     setFilterOption,
-    // filteredProducts, // nếu cần
     clearAllFilters,
   } = useProductFilter(db, onFilter);
 
@@ -35,32 +40,35 @@ export default function FilterProduct({ db, onFilter, onExposeActions }) {
   return (
     <div className="p-4 bg-white border rounded-lg space-y-6 h-auto md:h-full max-h-none md:max-h-screen overflow-x-auto md:overflow-y-auto">
       {/* Category */}
-      <div>
-        <h3 className="text-[#DC143C] font-semibold mb-2">Category</h3>
-        {categorieList.map((c) => (
-          <label
-            key={c}
-            className="flex items-center gap-1 flex-wrap text-sm sm:text-base"
-          >
-            <input
-              type="checkbox"
-              className="mr-2"
-              onChange={(e) =>
-                setFilterOption((prev) => {
-                  const current = prev.category;
-                  return {
-                    ...prev,
-                    category: e.target.checked
-                      ? [...current, c] // thêm category `c` vào mảng prev
-                      : current.filter((cur) => cur !== c), //giữ lại những phần tử khác với c (đã bị bỏ chọn)
-                  };
-                })
-              }
-            />
-            {c}
-          </label>
-        ))}
-      </div>
+      {!hideCategory && (
+        <div>
+          <h3 className="text-[#DC143C] font-semibold mb-2">Category</h3>
+          {categorieList.map((c) => (
+            <label
+              key={c}
+              className="flex items-center gap-1 flex-wrap text-sm sm:text-base"
+            >
+              <input
+                type="checkbox"
+                className="mr-2"
+                checked={filterOption.category.includes(c)}
+                onChange={(e) =>
+                  setFilterOption((prev) => {
+                    const current = prev.category;
+                    return {
+                      ...prev,
+                      category: e.target.checked
+                        ? [...current, c] // thêm category `c` vào mảng prev
+                        : current.filter((cur) => cur !== c), //giữ lại những phần tử khác với c (đã bị bỏ chọn)
+                    };
+                  })
+                }
+              />
+              {c}
+            </label>
+          ))}
+        </div>
+      )}
 
       {/* Brand */}
       <div>
@@ -73,6 +81,7 @@ export default function FilterProduct({ db, onFilter, onExposeActions }) {
             <input
               type="checkbox"
               className="mr-2"
+              checked={filterOption.brand.includes(b)}
               onChange={(e) =>
                 setFilterOption((prev) => {
                   const current = prev.brand;
@@ -131,6 +140,7 @@ export default function FilterProduct({ db, onFilter, onExposeActions }) {
             <input
               type="checkbox"
               className="mr-2"
+              checked={filterOption.power.includes(p)}
               onChange={(e) =>
                 setFilterOption((prev) => {
                   const current = prev.power;
