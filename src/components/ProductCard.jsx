@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ProductCard = ({
   product,
@@ -10,7 +11,7 @@ const ProductCard = ({
     <div className="">
       {/* Label */}
       {product.isNew && (
-        <span className="absolute top-2 left-2 bg-red-500 text-white text-[10px] sm:text-xs font-bold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded">
+        <span className="absolute top-2 left-2 bg-[#DC143C] text-white text-[10px] sm:text-xs font-bold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded">
           New
         </span>
       )}
@@ -33,19 +34,19 @@ const ProductCard = ({
       </div>
 
       {/* Product Info */}
-      <div className="flex flex-col flex-grow mt-2 sm:mt-3">
-        <h3 className="text-gray-800 font-semibold text-xs sm:text-sm md:text-base line-clamp-3">
+      <div className="flex flex-col flex-grow ">
+        <Link to={`/product/${product.ac_id}`} className="text-gray-800 font-bold line-clamp-3 mt-5 hover:underline min-h-[3.6em] leading-[1.2rem] ">
           {product.name}
-        </h3>
+        </Link>
         <div className="flex items-baseline gap-2 sm:gap-3 mt-1 sm:mt-2 mb-1">
-          <p className="text-[#dc143c] font-bold text-sm sm:text-lg md:text-xl">
+          <p className="text-[#DC143C] font-bold text-sm sm:text-lg md:text-lg">
             $ {product.price}
           </p>
-          <p className="text-gray-400 line-through text-[10px] sm:text-sm">
+          <p className="text-gray-400 line-through text-xs sm:text-sm">
             $ {product.old_price}
           </p>
         </div>
-        <p className="text-yellow-400 text-[10px] sm:text-sm mb-1">
+        <p className="text-yellow-400 text-xs sm:text-sm mb-1">
           ★
           <span className="text-gray-600">
             {" "}
@@ -53,7 +54,7 @@ const ProductCard = ({
           </span>
         </p>
       </div>
-    </div>
+    </div >
   );
 };
 

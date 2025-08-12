@@ -18,7 +18,7 @@ function Consider({ data, review }) {
 
                 {/* Custom Navigation Buttons */}
                 <div
-                    className="absolute z-10 top-1/2 left-0 -translate-y-1/2 -translate-x-full cursor-pointer bg-white border border-gray-300 rounded-full p-2 shadow hover:bg-red-100 transition"
+                    className="hidden md:block absolute z-10 top-1/2 left-0 -translate-y-1/2 cursor-pointer bg-white border border-gray-300 rounded-full p-2 shadow hover:bg-blue-100 transition"
                     id="custom-prev-consider"
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -27,7 +27,7 @@ function Consider({ data, review }) {
                 </div>
 
                 <div
-                    className="absolute z-10 top-1/2 right-0 translate-y-[-50%] translate-x-full cursor-pointer bg-white border border-gray-300 rounded-full p-2 shadow hover:bg-red-100 transition"
+                    className="hidden md:block absolute z-10 top-1/2 right-0 -translate-y-1/2 cursor-pointer bg-white border border-gray-300 rounded-full p-2 shadow hover:bg-blue-100 transition"
                     id="custom-next-consider"
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -81,11 +81,14 @@ function Consider({ data, review }) {
                                     )}
                                 </div>
 
-                                <img
-                                    src={`https://storage.googleapis.com/rheemcooling/${product.brand}/${product.ac_id}/${product.ac_id}_img1.webp`}
-                                    alt={product.name}
-                                    className="w-full h-50 md:h-30 my-5 md:mb-0 object-contain"
-                                />
+                                <div className="w-full h-[180px] md:h-[150px] flex justify-center items-center">
+                                    <img
+                                        src={`https://storage.googleapis.com/rheemcooling/${product.brand}/${product.ac_id}/${product.ac_id}_img1.webp`}
+                                        alt={product.name}
+                                        className="max-h-full object-contain"
+                                    />
+                                </div>
+
 
                                 <Link
                                     to={`/product/${product.ac_id}`}

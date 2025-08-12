@@ -26,7 +26,7 @@ function RecentView() {
                 {/* Custom Navigation Buttons */}
                 <button
                     id="custom-prev-recentview"
-                    className="absolute z-10 top-1/2 left-0 -translate-y-1/2 -translate-x-full cursor-pointer bg-white border border-gray-300 rounded-full p-2 shadow hover:bg-red-100 transition"
+                    className="hidden md:block absolute z-10 top-1/2 left-0 -translate-y-1/2 cursor-pointer bg-white border border-gray-300 rounded-full p-2 shadow hover:bg-blue-100 transition"
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -35,7 +35,7 @@ function RecentView() {
 
                 <button
                     id="custom-next-recentview"
-                    className="absolute z-10 top-1/2 right-0 translate-y-[-50%] translate-x-full cursor-pointer bg-white border border-gray-300 rounded-full p-2 shadow hover:bg-red-100 transition"
+                    className="hidden md:block absolute z-10 top-1/2 right-0 -translate-y-1/2 cursor-pointer bg-white border border-gray-300 rounded-full p-2 shadow hover:bg-blue-100 transition"
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -62,7 +62,7 @@ function RecentView() {
                     {recent.map((product) => (
                         <SwiperSlide
                             key={product.ac_id}
-                            className="p-6 border border-gray-200 rounded-md hover:shadow-sm"
+                            className="p-6 bg-white border border-gray-200 rounded-md hover:shadow-sm"
                         >
                             {/* Label row */}
                             <div className="flex justify-between">
@@ -79,11 +79,13 @@ function RecentView() {
                             </div>
 
                             {/* Product Image */}
-                            <img
-                                src={`https://storage.googleapis.com/rheemcooling/${product.brand}/${product.ac_id}/${product.ac_id}_img1.webp`}
-                                alt={product.name}
-                                className="w-full h-50 md:h-30 my-5 object-contain"
-                            />
+                            <div className="w-full h-[180px] md:h-[150px] flex justify-center items-center">
+                                <img
+                                    src={`https://storage.googleapis.com/rheemcooling/${product.brand}/${product.ac_id}/${product.ac_id}_img1.webp`}
+                                    alt={product.name}
+                                    className="max-h-full object-contain"
+                                />
+                            </div>
 
                             {/* Product Name */}
                             <Link

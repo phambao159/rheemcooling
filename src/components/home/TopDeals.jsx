@@ -28,37 +28,34 @@ const TopDeals = ({ db }) => {
       className="my-2 px-4 sm:px-6 md:px-10 py-5 sm:py-8 md:py-10 border rounded-lg"
     >
       <div className="grid grid-cols-10 gap-4 md:gap-6">
-        <div className="col-span-3 flex flex-col items-start justify-center">
-          <h2 className="text-3xl sm:text-4xl md:text-6xl text-[#dc143c] mb-2">
+        <div className="col-span-10 md:col-span-3 flex flex-col items-start justify-center">
+          <h2 className="text-4xl md:text-6xl text-[#DC143C] mb-2">
             TOP <div className="font-bold ">DEALS</div>
           </h2>
-          <p className="text-lg sm:text-xl md:text-2xl text-[#dc143c] mb-4">
+          <p className="text-lg sm:text-xl md:text-2xl text-[#DC143C] mb-4">
             Don't miss it
           </p>
           <Link to="/topsellingAC">
-            <button className="bg-[#dc143c] font-semibold text-white text-base sm:text-lg md:text-xl px-3 sm:px-4 py-2 rounded-lg hover:bg-red-700 transition">
+            <button className="bg-[#DC143C] font-semibold text-white text-base sm:text-lg md:text-xl px-3 sm:px-4 py-2 rounded-lg hover:bg-blue-700 transition">
               Shop now
             </button>
           </Link>
         </div>
 
-        <div className="col-span-7 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+        <div className="col-span-10 md:col-span-7 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
           {/* topProducts.map() cũng OK */}
           {shuffleArray(db)
             .slice(0, 6)
             .map((item, index) => {
               const productData = db.find((p) => p.ac_id === item.ac_id);
-              const imageUrl = `https://storage.googleapis.com/rheemcooling/${
-                productData.brand
-              }/${item.ac_id}/${item.ac_id}_img${
-                item.bestImageIndex || 1
-              }.webp`;
+              const imageUrl = `https://storage.googleapis.com/rheemcooling/${productData.brand
+                }/${item.ac_id}/${item.ac_id}_img${item.bestImageIndex || 1
+                }.webp`;
               return (
                 <div
                   key={index}
-                  className={`bg-gray-50 text-black rounded-md shadow p-1 sm:p-2 md:p-3 ${
-                    index < 2 ? "lg:col-span-2" : ""
-                  }`}
+                  className={`bg-gray-50 text-black rounded-md shadow p-1 sm:p-2 md:p-3 ${index < 2 ? "lg:col-span-2" : ""
+                    }`}
                 >
                   <div className="flex justify-center items-center mb-3 h-36 sm:h-40 md:h-44">
                     <img
@@ -75,7 +72,7 @@ const TopDeals = ({ db }) => {
 
                   <div className="flex justify-center mt-2 md:mt-3 lg:mt-4">
                     <Link to={`/product/${item.ac_id}`}>
-                      <button className="w-full bg-[#dc143c] font-semibold text-white text-sm sm:text-base px-2 py-1 rounded-md hover:bg-red-700 transition">
+                      <button className="w-full bg-[#DC143C] font-semibold text-white text-sm sm:text-base px-2 py-1 rounded-md hover:bg-blue-700 transition mb-2">
                         Shop now
                       </button>
                     </Link>
@@ -91,12 +88,12 @@ const TopDeals = ({ db }) => {
             Shop deals by category
           </h3>
 
-          <div className="flex justify-start sm:justify-center items-center gap-4 overflow-x-auto scrollbar-hide">
+          <div className="flex justify-center items-center md:gap-4 md:overflow-x-auto scrollbar-hide">
             {["Window AC", "Split AC", "Cassette AC"].map((cat, index) => (
               <Link to="/topsellingAC" className="block">
                 <div
                   key={index}
-                  className="flex-shrink-0 w-32 sm:w-40 text-center"
+                  className="flex-shrink-0 w-32 sm:w-40 text-center pb-4 md:pb-0"
                 >
                   <div className="flex justify-center items-center bg-white w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-2 border-2 border-black rounded-full overflow-hidden">
                     <img

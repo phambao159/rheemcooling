@@ -47,7 +47,7 @@ function Review({ data }) {
                 </div>
             </div>
 
-            <div className="space-y-6 col-span-3 md:col-span-2">
+            <div className="space-y-6 col-span-3 md:col-span-2 ">
                 {visibleReviews.map((re) => (
                     <div key={re.review_id} className="bg-white shadow-sm p-4 rounded-md border border-gray-200 hover:shadow-md transition">
                         <div className="flex items-center gap-4 mb-2">

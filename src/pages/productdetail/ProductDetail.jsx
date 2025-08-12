@@ -1,6 +1,6 @@
 import Consider from "../../components/productdetail/Consider";
 import Description from "../../components/productdetail/Description";
-import ImageGallery from "../../components/productdetail/ImageGallary";
+import ImageGallery from "../../components/productdetail/ImageGallery";
 import ProductInfo from "../../components/productdetail/ProductInfo";
 import Review from "../../components/productdetail/Review";
 import { useParams } from "react-router-dom";

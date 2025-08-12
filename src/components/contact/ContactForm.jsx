@@ -227,7 +227,7 @@ export default function ContactForm() {
                 <div className="mt-10">
                     <button
                         type="submit"
-                        className="block w-full rounded-md bg-[#DC143C] px-3.5 py-2.5 text-center text-sm font-semibold text-white hover:bg-red-600"
+                        className="block w-full rounded-md bg-[#DC143C] px-3.5 py-2.5 text-center text-sm font-semibold text-white hover:bg-blue-600"
                     >
                         Send us
                     </button>

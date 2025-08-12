@@ -9,8 +9,8 @@ import Partners from "../../components/aboutus/Partners";
 function AboutUs() {
     useEffect(() => {
         AOS.init({
-            duration: 800,      // tốc độ animation
-            once: true,         // chỉ chạy 1 lần khi scroll tới
+            duration: 800,
+            once: true,
             easing: 'ease-in-out',
         });
     }, []);

@@ -16,7 +16,7 @@ function Partners() {
 
                 {/* Custom Navigation Buttons */}
                 <div
-                    className="absolute z-10 top-1/2 left-0 -translate-y-1/2 -translate-x-full cursor-pointer bg-white border border-gray-300 rounded-full p-2 shadow hover:bg-red-100 transition"
+                    className="hidden md:block absolute z-10 top-1/2 right-0 -translate-y-1/2 cursor-pointer bg-white border border-gray-300 rounded-full p-2 shadow hover:bg-blue-100 transition"
                     id="custom-prev"
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -25,7 +25,7 @@ function Partners() {
                 </div>
 
                 <div
-                    className="absolute z-10 top-1/2 right-0 translate-y-[-50%] translate-x-full cursor-pointer bg-white border border-gray-300 rounded-full p-2 shadow hover:bg-red-100 transition"
+                    className="hidden md:block absolute z-10 top-1/2 right-0 -translate-y-1/2 cursor-pointer bg-white border border-gray-300 rounded-full p-2 shadow hover:bg-blue-100 transition"
                     id="custom-next"
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -62,7 +62,7 @@ function Partners() {
                             <img
                                 src={`${process.env.PUBLIC_URL}${partner.url}`}
                                 alt={partner.id}
-                                className="w-full h-30 object-contain border border-gray-200 rounded-sm"
+                                className="w-full !h-30 object-contain border border-gray-200 rounded-sm"
                             />
                         </SwiperSlide>
                     ))}

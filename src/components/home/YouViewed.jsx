@@ -21,8 +21,8 @@ export default function YouViewed({ db, isOpenHistory, setIsOpenHistory }) {
   if (recent.length === 0) return null;
 
   return (
-    <section className="bg-[#dc143c] my-2 px-4 sm:px-6 py-4 sm:py-6 rounded-lg">
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 mb-4">
+    <section className="bg-[#DC143C] my-2 px-4 sm:px-6 py-4 sm:py-6 rounded-lg">
+      <div className="flex justify-between items-center gap-2 mb-4">
         <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-white">
           You Recently Viewed
         </h2>
