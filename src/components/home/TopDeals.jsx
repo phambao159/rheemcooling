@@ -98,7 +98,7 @@ const TopDeals = ({ db }) => {
                     />
                   </div>
 
-                  <p className="font-semibold text-sm sm:text-base mb-2 line-clamp-3 flex-grow">
+                  <p className="font-semibold text-sm sm:text-base mb-2 line-clamp-3 flex-grow min-h-[3.6em] leading-[1.2rem]">
                     {productData.name}
                   </p>
 
