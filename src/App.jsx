@@ -14,7 +14,10 @@ import ScrollToTop from "./components/ScrollToTop";
 import SearchPage from "./pages/SearchPage";
 
 import Home from "./pages/home/Home";
-import Product from "./pages/product/Product";
+import TopSellingAC from "./pages/product/TopSellingAC";
+import WindowAC from "./pages/product/WindowAC";
+import SplitAC from "./pages/product/SplitAC";
+import CassetteAC from "./pages/product/CassetteAC";
 
 function App() {
   return (
@@ -34,10 +37,10 @@ function App() {
             ></Route>
             <Route path="/aboutus" element={<AboutUs />}></Route>
             <Route path="/search" element={<SearchPage />} />
-            <Route path="/topsellingAC" element={<Product />}></Route>
-            <Route path="/windowAC" element={<div>Window AC</div>}></Route>
-            <Route path="/splitAC" element={<div>Split AC</div>}></Route>
-            <Route path="/cassetteAC" element={<div>Cassette AC</div>}></Route>
+            <Route path="/topsellingAC" element={<TopSellingAC />}></Route>
+            <Route path="/windowAC" element={<WindowAC />}></Route>
+            <Route path="/splitAC" element={<SplitAC />}></Route>
+            <Route path="/cassetteAC" element={<CassetteAC />}></Route>
             <Route
               path="/savedproduct"
               element={<SavedProduct review={review} />}
@@ -49,16 +52,6 @@ function App() {
           </Routes>
         </div>
       </div>
-
-
-      <df-messenger
-        chat-icon="https://png.pngtree.com/png-vector/20230225/ourmid/pngtree-smart-chatbot-cartoon-clipart-png-image_6620453.png"
-        intent="WELCOME"
-        chat-title="AI_RheemCooling"
-        agent-id="2a60cb34-4f0f-4760-9520-c2a91ac713fb"
-        language-code="en"
-      ></df-messenger>
-
 
       <YourLocation />
       <Footer />

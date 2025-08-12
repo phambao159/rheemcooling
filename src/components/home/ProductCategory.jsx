@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
-import windowAC_vuong from "../../images/home/windowAC_vuong.jpg";
 import ProductCard from "../ProductCard";
 
 const ProductCategory = ({ db }) => {
