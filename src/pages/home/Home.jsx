@@ -34,7 +34,7 @@ export default function Home() {
         <img
           src={banner_1}
           alt="Banner Carousel & Call To Action"
-          className="w-full" //w-full max-w-full sm:max-w-3xl md:max-w-5xl h-auto object-contain
+          className="w-full brightness-[0.85]" //w-full max-w-full sm:max-w-3xl md:max-w-5xl h-auto object-contain
         />
       </div>
 
