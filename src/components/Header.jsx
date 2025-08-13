@@ -49,7 +49,7 @@ function Header() {
             {/* Desktop Menu */}
             <div className="hidden lg:flex items-center gap-x-10">
               <div className="relative group">
-                <button className="flex items-center gap-x-1 text-sm font-semibold text-gray-900">
+                <button className="flex items-center gap-x-1 text-sm font-semibold text-gray-900 hover:text-[#DC143C]">
                   Product
                   <svg
                     viewBox="0 0 20 20"
@@ -99,25 +99,25 @@ function Header() {
 
               <Link
                 to="/aboutus"
-                className="text-sm font-semibold text-gray-900"
+                className="text-sm font-semibold text-gray-900 hover:text-[#DC143C]"
               >
                 About Us
               </Link>
               <Link
                 to="/contact"
-                className="text-sm font-semibold text-gray-900"
+                className="text-sm font-semibold text-gray-900 hover:text-[#DC143C]"
               >
                 Contact
               </Link>
               <Link
                 to="/customersupport"
-                className="text-sm font-semibold text-gray-900"
+                className="text-sm font-semibold text-gray-900 hover:text-[#DC143C]"
               >
                 Customer Support
               </Link>
               <Link
                 to="/savedproduct"
-                className="text-sm font-semibold text-white bg-[#DC143C] rounded-lg px-3 py-2"
+                className="text-sm font-semibold text-white bg-[#DC143C] hover:bg-red-700 rounded-lg px-3 py-2"
               >
                 Saved Product
               </Link>

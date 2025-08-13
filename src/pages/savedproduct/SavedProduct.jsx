@@ -44,12 +44,14 @@ function SavedProduct({ review = [] }) {
                             <div className="flex justify-end">
                                 <button onClick={() => handleDelete(product.ac_id)}><X /></button>
                             </div>
-                            <img
-                                src={`https://storage.googleapis.com/rheemcooling/${product.brand}/${product.ac_id}/${product.ac_id}_img1.webp`}
+                            <div className="w-full h-50 my-5 md:mb-0">
+                                <img
+                                    src={`https://storage.googleapis.com/rheemcooling/${product.brand}/${product.ac_id}/${product.ac_id}_img1.webp`}
 
-                                alt={product.name}
-                                className="w-full h-50 my-5 md:mb-0 object-contain"
-                            />
+                                    alt={product.name}
+                                    className="w-full h-full object-contain"
+                                />
+                            </div>
                             <h2
 
                                 className="font-bold text-sm line-clamp-3 mt-5 hover:underline min-h-[3.6em] leading-[1.2em]"
