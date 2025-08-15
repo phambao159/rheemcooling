@@ -104,7 +104,7 @@ const TopDeals = ({ db }) => {
 
                   <div className="flex justify-center mt-2 md:mt-3 lg:mt-4">
                     <Link to={`/product/${item.ac_id}`}>
-                      <button className="w-full bg-[#DC143C] font-semibold text-white text-sm sm:text-base px-2 py-1 rounded-md hover:bg-blue-700 transition mb-2">
+                      <button className="w-full bg-[#DC143C] font-semibold text-white text-sm sm:text-base px-2 py-1 rounded-md hover:bg-red-700 transition mb-2">
                         Shop now
                       </button>
                     </Link>
